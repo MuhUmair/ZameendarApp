@@ -1,0 +1,78 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.menu-inner{
+  width: 73% !important;
+}
+.color{
+  background-color: white;
+  color: black;
+}
+.item-md.item-block .item-inner{
+  border:none!important;
+}
+.item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input, .item-md ion-icon[item-start] + .item-inner, .item-md ion-icon[item-start] + .item-input{
+  margin-left: 10px!important;
+}
+.back-image{
+  background-image: url("../assets/imgs/menubackground.png") !important;
+  background-repeat: no-repeat;
+  //padding: 32%;
+  background-size: 100%;
+  height: auto;
+}
+.avatar-set{
+  //border-radius: 50%;
+  width: 24%;
+  /* text-align: -webkit-match-parent; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 71px;
+}
+.edit_icon{
+  float: right;
+  margin: 15px;
+  height: 20px;
+}
+.main_title{
+  color: white;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 3px;
+}
+.sub_title{
+  color: white;
+  text-align: center;
+  margin-top: 0px;
+  padding-bottom: 25px
+}
+//.message_icon{
+//  //content: '';
+//  //display: block;
+//  //height: 40px;  /*height of icon */
+//  //width: 40px;  /*width of icon */
+//  //position: absolute;
+//  ///*where to replace the icon */
+//  //top: 0px;
+//  //left: -40px;
+//  /*background */
+//  background: url("../assets/icon/message1.png");
+//  width: 40px;
+//  height: 40px;
+//  background-repeat: no-repeat;
+//}

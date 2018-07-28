@@ -1,0 +1,34 @@
+page-search {
+  #card_margin{
+    margin-top: 52px;
+  }
+  .text_align{
+    color: white;
+    text-align: center !important;
+  }
+  .SearchText{
+    margin-left: 26%;
+    //color: white;
+  }
+  .toolbar-background-md{
+    background: transparent !important;
+  }
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    background-image: none !important;
+  }
+  .background_div{
+    background-color: #6ad969 !important;
+    height: 392px;
+    width: 130%;
+    margin-top: -15%;
+    margin-left: -15%;
+    //-webkit-transform: rotate(2deg);
+    transform: rotate(14deg);
+  }
+  .toolbar-title-md{
+    color: white;
+  }
+  .icon icon-md ion-md-menu{
+    color: white;
+  }
+}

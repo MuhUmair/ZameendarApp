@@ -1,0 +1,44 @@
+page-home {
+  .toolbar-background-md{
+    background: transparent !important;
+  }
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    background-image: none !important;
+  }
+  .toolbar-title-md{
+    color: black;
+    text-align: center;
+    color: white;
+  }
+  .titleUnderslider{
+    text-align: center;
+    color: black;
+    margin-bottom: 0px;
+  }
+  .slide-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .slide-image {
+    max-height: 100%;
+    max-width: 100%;
+    //margin: 5px;
+  }
+  .swiper-pagination-bullet-active{
+    background: white;
+  }
+  .LoginSignupButtonStyle{
+   // margin: 31px 0px 11px 0px;
+    padding: 10px 40px 10px 40px;
+    font-size: 13px !important;
+    width: 100%;
+    background-color: #6ad969;
+    border-radius: 5px;
+    color: white;
+  }
+  .fixed-content, .scroll-content{
+    margin-top: 0px !important;
+  }
+}
