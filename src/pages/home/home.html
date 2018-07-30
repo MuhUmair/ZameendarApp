@@ -15,28 +15,33 @@
 
 </ion-header>
 
-<ion-content style="border: solid 1px black; margin-top: 57px;">
+<ion-content style="border: solid 1px black">
   <ion-slides pager style="height: 34%; background-color: beige;">
-    <ion-slide>
-      <div style="height: 100%">
-        <h2 class="slide-title">Top Banners</h2>
-        <img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div style="height: 100%">
-        <h2 class="slide-title">Top Banners</h2>
-        <img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div style="height: 100%">
-        <h2  class="slide-title">Top Banners</h2>
-        <img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>
-      </div>
-    </ion-slide>
-  </ion-slides>
 
+    <!--<z-button btnText="Search" buttonStyle="SearchButtonStyle"></z-button>-->
+
+    <slider titleName="Top Banner" imgName="../../assets/imgs/menubackgroundslider.png"></slider>
+    <slider titleName="Top Banner" imgName="../../assets/imgs/menubackgroundslider.png"></slider>
+    <slider titleName="Top Banner" imgName="../../assets/imgs/menubackgroundslider.png"></slider>
+    <!--<ion-slide>-->
+      <!--<div style="height: 100%">-->
+        <!--<h2 class="slide-title">Top Banners</h2>-->
+        <!--<img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>-->
+      <!--</div>-->
+    <!--</ion-slide>-->
+    <!--<ion-slide>-->
+      <!--<div style="height: 100%">-->
+        <!--<h2 class="slide-title">Top Banners</h2>-->
+        <!--<img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>-->
+      <!--</div>-->
+    <!--</ion-slide>-->
+    <!--<ion-slide>-->
+      <!--<div style="height: 100%">-->
+        <!--<h2  class="slide-title">Top Banners</h2>-->
+        <!--<img src="../../assets/imgs/menubackgroundslider.png" style="width:100%;height:100%;" class="slide-image"/>-->
+      <!--</div>-->
+    <!--</ion-slide>-->
+  </ion-slides>
 
   <ion-toolbar>
     <!--<ion-title color="blacks" >HOME</ion-title>-->
@@ -47,4 +52,62 @@
     <z-button style="float: left; margin-left: 8%" ty btnText="LOGIN" buttonStyle="LoginSignupButtonStyle"></z-button>
     <z-button style="float: right; margin-right: 8%" btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></z-button>
   </ion-toolbar>
+  <h2>Artee</h2>
+
+
+
+
+  <!--<ion-toolbar>-->
+    <!--&lt;!&ndash;<button (click)="goBack()" clear>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-icon name="arrow-back"></ion-icon>Back&ndash;&gt;-->
+    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ion-title>Request</ion-title>&ndash;&gt;-->
+  <!--</ion-toolbar>-->
+  <ion-content>
+
+    <ion-scroll scrollX="true">
+      <img src="../../assets/tractor.png" height="200px"/>
+      <img src="../../assets/tractor.png" height="200px"/>
+      <img src="../../assets/tractor.png" height="200px"/>
+      <img src="../../assets/tractor.png" height="200px"/>
+      <img src="../../assets/tractor.png" height="200px"/>
+      <img src="../../assets/tractor.png" height="200px"/>
+    </ion-scroll>
+
+    <ion-item>
+      <!--<ion-label floating>Description</ion-label>-->
+      <!--<ion-textarea ></ion-textarea>-->
+    </ion-item>
+
+    <!--<button (click)="addPhoto()">Add Photo</button>-->
+  </ion-content>
+
+
+
+
+
+
+  <!--<ion-toolbar>-->
+    <ion-scroll scrollX="true" style="border: solid 1px black">
+      <ion-item class="item item-block item-ios" style="width: 112px;float: left">
+
+        <ion-thumbnail>
+          <img src="../../assets/tractor.png">
+        </ion-thumbnail>
+        <h2 style="margin: 0px; text-align: center">Artee</h2>
+      </ion-item>
+
+
+
+      <ion-item class="item item-block item-ios" style="width: 112px;float: left">
+        <ion-thumbnail>
+          <img src="../../assets/tractor.png">
+        </ion-thumbnail>
+        <h2 style="margin: 0px;text-align: center">Artee</h2>
+      </ion-item>
+    </ion-scroll>
+  <!--</ion-toolbar>-->
+
+
+
 </ion-content>
