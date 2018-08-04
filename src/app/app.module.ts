@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
 import { ListPage } from '../pages/list/list';
+import { FeedPage } from '../pages/feed/feed';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,6 +17,7 @@ import { ComponentsModule} from "../components/components.module";
     MyApp,
     SearchPage,
     ListPage,
+    FeedPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { ComponentsModule} from "../components/components.module";
   entryComponents: [
     MyApp,
     SearchPage,
-    ListPage
+    ListPage,
+    FeedPage
   ],
   providers: [
     StatusBar,
