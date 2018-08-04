@@ -5,18 +5,21 @@ import { InputLabelComponent } from './input-label/input-label';
 import { ZButtonComponent } from './z-button/z-button';
 import { InputFieldComponent } from './input-field/input-field';
 import { SliderComponent } from './slider/slider';
+import { HorizontalItemSliderComponent } from './horizontal-item-slider/horizontal-item-slider';
 // import { HomeComponent } from './home/home';
 @NgModule({
 	declarations: [IconListItemComponent,
     InputLabelComponent,
     ZButtonComponent,
     InputFieldComponent,
-    SliderComponent],
+    SliderComponent,
+    HorizontalItemSliderComponent],
 	imports: [ IonicModule ],
 	exports: [IconListItemComponent,
     InputLabelComponent,
     ZButtonComponent,
     InputFieldComponent,
-    SliderComponent]
+    SliderComponent,
+    HorizontalItemSliderComponent]
 })
 export class ComponentsModule {}
