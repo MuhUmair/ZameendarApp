@@ -1,3 +1,19 @@
 slider {
-
+  .fixed-content, .scroll-content{
+    margin-top: 0px !important;
+  }
+  .slide-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .slide-image {
+    max-height: 100%;
+    max-width: 100%;
+    //margin: 5px;
+  }
+  .swiper-pagination-bullet-active{
+    background: white;
+  }
 }
