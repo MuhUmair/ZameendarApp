@@ -18,7 +18,7 @@
 
     <!--<ion-card>-->
     <div class="back-image">
-        <div><img class="edit_icon" src="../assets/icon/editicon.png"/></div>
+        <!-- <div><img class="edit_icon" src="../assets/icon/editicon.png"/></div> -->
         <div class="avatar-set"><img style="border-radius: 50%;" class="" src="assets/imgs/images.jpg"/></div>
         <div>
             <p class="main_title">Jimmy Brown</p>
@@ -28,6 +28,15 @@
 
     </div>
 
+<ion-content>
+  <ion-list>
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      {{p.title}}
+    </button>
+  </ion-list>
+</ion-content>
+
+
     <!--<p style="text-align: center; position: absolute; margin-top: 56%;">hell world</p>-->
       <!--<img src="assets/imgs/bjork-live.jpg"/>-->
 
@@ -36,12 +45,15 @@
           <!--Björk-->
         <!--</ion-card-title>-->
       <!--</ion-card-content>-->
+
       
     <icon-list-item iconClass="message" displayText="Messages" badgeCount="26"></icon-list-item>
+
+    <!-- <icon-list-item iconClass="message" displayText="Messages" badgeCount="26"></icon-list-item>
     <icon-list-item iconClass="ios-mail-outline" displayText="Followers" badgeCount="21"></icon-list-item>
     <icon-list-item iconClass="ios-mail-outline" displayText="Feeds" badgeCount="22"></icon-list-item>
     <icon-list-item iconClass="ios-mail-outline" displayText="Photo" badgeCount="23"></icon-list-item>
-    <icon-list-item iconClass="ios-mail-outline" displayText="Messages" badgeCount="24"></icon-list-item>
+    <icon-list-item iconClass="ios-mail-outline" displayText="Messages" badgeCount="24"></icon-list-item> -->
     <!--<ion-item >-->
         <!--<ion-icon name='ios-mail-outline' item-start style="border: none" ></ion-icon>-->
         <!--Messages-->

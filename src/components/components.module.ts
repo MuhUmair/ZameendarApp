@@ -7,7 +7,8 @@ import { InputFieldComponent } from './input-field/input-field';
 import { SliderComponent } from './slider/slider';
 import { HorizontalItemSliderComponent } from './horizontal-item-slider/horizontal-item-slider';
 import { HomeComponent } from './home/home';
-// import { HomeComponent } from './home/home';
+import { DetailHeaderComponent } from './detail-header/detail-header';
+import { HomeComponent } from './home/home';
 @NgModule({
 	declarations: [IconListItemComponent,
     InputLabelComponent,
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home';
     InputFieldComponent,
     SliderComponent,
     HorizontalItemSliderComponent,
-    HomeComponent]
+    HomeComponent,
+    DetailHeaderComponent]
 })
 export class ComponentsModule {}
