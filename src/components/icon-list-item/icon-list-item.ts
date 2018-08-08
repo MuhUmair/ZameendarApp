@@ -16,7 +16,6 @@ export class IconListItemComponent {
   iconClass: string;
   displayText: string;
   badgeCount: string;
-
   constructor(elm: ElementRef) {
     this.displayText = elm.nativeElement.getAttribute('displayText');
       this.iconClass = elm.nativeElement.getAttribute('iconClass');

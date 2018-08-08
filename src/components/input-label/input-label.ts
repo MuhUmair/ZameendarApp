@@ -14,9 +14,11 @@ export class InputLabelComponent {
 
   text: string;
     InputLabel: string;
+    InputPlaceholder: string;
     // Inputborder: string;
   constructor(elm: ElementRef) {
       this.InputLabel = elm.nativeElement.getAttribute('InputLabel');
+      this.InputPlaceholder = elm.nativeElement.getAttribute('InputPlaceholder');
       // this.Inputborder = elm.nativeElement.getAttribute('Inputborder');
     // console.log('Hello InputLabelComponent Component');
     // this.text = 'Hello World';
