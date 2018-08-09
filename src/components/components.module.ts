@@ -7,6 +7,7 @@ import { InputFieldComponent } from './input-field/input-field';
 import { SliderComponent } from './slider/slider';
 import { HorizontalItemSliderComponent } from './horizontal-item-slider/horizontal-item-slider';
 import { DetailHeaderComponent } from './detail-header/detail-header';
+import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
 // import { HomeComponent } from './home/home';
 @NgModule({
 	declarations: [IconListItemComponent,
@@ -15,7 +16,8 @@ import { DetailHeaderComponent } from './detail-header/detail-header';
     InputFieldComponent,
     SliderComponent,
     HorizontalItemSliderComponent,
-    DetailHeaderComponent],
+    DetailHeaderComponent,
+    DealerListItemComponent],
 	imports: [ IonicModule ],
 	exports: [IconListItemComponent,
     InputLabelComponent,
@@ -23,6 +25,7 @@ import { DetailHeaderComponent } from './detail-header/detail-header';
     InputFieldComponent,
     SliderComponent,
     HorizontalItemSliderComponent,
-    DetailHeaderComponent]
+    DetailHeaderComponent,
+    DealerListItemComponent]
 })
 export class ComponentsModule {}
