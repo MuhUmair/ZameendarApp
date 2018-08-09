@@ -28,6 +28,7 @@ import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
     SliderComponent,
     HorizontalItemSliderComponent,
     HomeComponent,
-    DetailHeaderComponent]
+    DetailHeaderComponent,
+    DealerListItemComponent]
 })
 export class ComponentsModule {}
