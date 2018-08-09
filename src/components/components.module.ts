@@ -6,6 +6,7 @@ import { ZButtonComponent } from './z-button/z-button';
 import { InputFieldComponent } from './input-field/input-field';
 import { SliderComponent } from './slider/slider';
 import { HorizontalItemSliderComponent } from './horizontal-item-slider/horizontal-item-slider';
+import { HomeComponent } from './home/home';
 import { DetailHeaderComponent } from './detail-header/detail-header';
 import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
 // import { HomeComponent } from './home/home';
@@ -17,7 +18,8 @@ import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
     SliderComponent,
     HorizontalItemSliderComponent,
     DetailHeaderComponent,
-    DealerListItemComponent],
+    DealerListItemComponent,
+    HomeComponent],
 	imports: [ IonicModule ],
 	exports: [IconListItemComponent,
     InputLabelComponent,
@@ -25,7 +27,7 @@ import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
     InputFieldComponent,
     SliderComponent,
     HorizontalItemSliderComponent,
-    DetailHeaderComponent,
-    DealerListItemComponent]
+    HomeComponent,
+    DetailHeaderComponent]
 })
 export class ComponentsModule {}
