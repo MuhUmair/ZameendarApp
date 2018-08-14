@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home';
 import { DetailHeaderComponent } from './detail-header/detail-header';
 import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
 import { CommunicationItemComponent } from './communication-item/communication-item';
+import { RatesItemComponent } from './rates-item/rates-item';
 // import { HomeComponent } from './home/home';
 @NgModule({
 	declarations: [IconListItemComponent,
@@ -21,7 +22,8 @@ import { CommunicationItemComponent } from './communication-item/communication-i
     DetailHeaderComponent,
     DealerListItemComponent,
     HomeComponent,
-    CommunicationItemComponent],
+    CommunicationItemComponent,
+    RatesItemComponent],
 	imports: [ IonicModule ],
 	exports: [IconListItemComponent,
     InputLabelComponent,
@@ -32,6 +34,7 @@ import { CommunicationItemComponent } from './communication-item/communication-i
     HomeComponent,
     DetailHeaderComponent,
     DealerListItemComponent,
-    CommunicationItemComponent]
+    CommunicationItemComponent,
+    RatesItemComponent]
 })
 export class ComponentsModule {}

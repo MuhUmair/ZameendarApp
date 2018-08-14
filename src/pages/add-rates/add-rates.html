@@ -1,0 +1,33 @@
+<div class="background_div"></div>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+    <ion-title class="SearchText">Add Rates</ion-title>
+
+    <ion-buttons end>
+      <button ion-button style="background-color: #6ad969; margin-right: 15px">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: transparent">
+  <p class="text_align">Add Product Rates</p>
+  <ion-card id="card_margin">
+    <ion-card-content>
+
+      <!-- <input-label InputLabel="Product Type"></input-label>
+      <input-label InputLabel="Product Name"></input-label> -->
+      <div *ngFor="let item of items">
+        <rates-item [item]="item"></rates-item>
+      </div>
+      <z-button btnText="Add" buttonStyle="SearchButtonStyle"></z-button>
+    
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
