@@ -1,13 +1,13 @@
 <ion-item>
   <ion-avatar item-start>
-    <img class="img" src="../../assets/imgs/profile.png">
+    <img class="img" src="{{item.ImagePath}}">
   </ion-avatar>
       <div class="header-div">
           <p><b>{{item.Name}}</b></p><br/>
-          <p class="phone text">Phone: {{item.Phone}}</p>
+          <p class="phone text">{{item.Phone}}</p>
       </div>
       <div class="header-div sub-div">
-          <p class="dealer text">Dealer</p><br/>
-          <p class="text">Followers {{item.Followers}}</p>
+          <p class="dealer text">{{item.Category}}</p><br/>
+          <p class="dealer text">{{item.Followers}}</p>
       </div>
 </ion-item>

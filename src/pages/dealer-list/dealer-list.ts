@@ -17,12 +17,12 @@ export class DealerListPage {
   items: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items = [
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
-      {Name:'Maurrice Hans',Phone:'123 123 123',Followers:'100'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
+      {Name:'Maurrice Hans',Phone:'Phone: 123 123 123',Followers:'Followers 100',Category:'Dealer',ImagePath:'../../assets/imgs/profile.png'},
     ];
   }
 

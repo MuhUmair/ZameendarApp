@@ -1,0 +1,22 @@
+page-profile {
+ion-header
+{
+    ion-navbar
+    {
+        div.toolbar-background
+        {
+            background-image: url(../../assets/imgs/menubackground.png) !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+    }
+}
+ion-tab
+{
+    display: block !important;
+}
+.bar-button-default-md
+{
+    display: none;
+}
+}
