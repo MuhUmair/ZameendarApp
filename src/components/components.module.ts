@@ -6,11 +6,6 @@ import { ZButtonComponent } from './z-button/z-button';
 import { InputFieldComponent } from './input-field/input-field';
 import { SliderComponent } from './slider/slider';
 import { HorizontalItemSliderComponent } from './horizontal-item-slider/horizontal-item-slider';
-import { HomeComponent } from './home/home';
-import { DetailHeaderComponent } from './detail-header/detail-header';
-import { DealerListItemComponent } from './dealer-list-item/dealer-list-item';
-import { CommunicationItemComponent } from './communication-item/communication-item';
-import { RatesItemComponent } from './rates-item/rates-item';
 // import { HomeComponent } from './home/home';
 @NgModule({
 	declarations: [IconListItemComponent,
@@ -18,23 +13,13 @@ import { RatesItemComponent } from './rates-item/rates-item';
     ZButtonComponent,
     InputFieldComponent,
     SliderComponent,
-    HorizontalItemSliderComponent,
-    DetailHeaderComponent,
-    DealerListItemComponent,
-    HomeComponent,
-    CommunicationItemComponent,
-    RatesItemComponent],
+    HorizontalItemSliderComponent],
 	imports: [ IonicModule ],
 	exports: [IconListItemComponent,
     InputLabelComponent,
     ZButtonComponent,
     InputFieldComponent,
     SliderComponent,
-    HorizontalItemSliderComponent,
-    HomeComponent,
-    DetailHeaderComponent,
-    DealerListItemComponent,
-    CommunicationItemComponent,
-    RatesItemComponent]
+    HorizontalItemSliderComponent]
 })
 export class ComponentsModule {}

@@ -8,7 +8,7 @@ import { ComponentsModule } from '../../components/components.module';
     HomePage,
   ],
   imports: [
-      ComponentsModule,
+    ComponentsModule,
     IonicPageModule.forChild(HomePage),
   ],
 })

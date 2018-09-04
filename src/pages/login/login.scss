@@ -1,0 +1,17 @@
+page-login {
+    .text_align{
+        text-align: center !important;
+        font-size: 27px;
+      }
+      .toolbar-background-md{
+        background: transparent !important;
+      }
+      .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+        background-image: none !important;
+      }
+      .styleforget{
+        margin-top: 17px;
+        background-color: white;
+        font-size: 16px;
+      }
+}

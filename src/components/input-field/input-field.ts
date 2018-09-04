@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef} from '@angular/core';
 
 /**
  * Generated class for the InputFieldComponent component.
@@ -13,8 +13,11 @@ import { Component } from '@angular/core';
 export class InputFieldComponent {
 
   text: string;
+  InputPlaceholder: string;
 
-  constructor() {
+  constructor(elm: ElementRef) {
+    this.InputPlaceholder = elm.nativeElement.getAttribute('InputPlaceholder');
+
     console.log('Hello InputFieldComponent Component');
     this.text = 'Hello World';
   }
