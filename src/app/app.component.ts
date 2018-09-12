@@ -1,10 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
+// import { NavController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+//Navigation
 import { SearchPage } from '../pages/search/search';
 import { ListPage } from '../pages/list/list';
+import { HomePage } from '../pages/home/home';
+import { AddProductPage } from '../pages/add-product/add-product';
+import { CommunicationPage } from '../pages/communication/communication';
+import { DealerListPage } from '../pages/dealer-list/dealer-list';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -40,6 +46,20 @@ export class MyApp {
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
     }
+// Navigation
+    goTohome(){
+        this.nav.push(HomePage);
+    }
+    goToaddProduct(){
+        this.nav.push(AddProductPage);
+    }
+    goTocommunication(){
+        this.nav.push(CommunicationPage);
+    }
+    goTodealerList(){
+        this.nav.push(DealerListPage);
+    }
+    
 }
 
 

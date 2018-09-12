@@ -11,11 +11,33 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ComponentsModule} from "../components/components.module";
 
+// Navigation
+import { FeedsPage } from "../pages/feeds/feeds"
+import { HomePage } from '../pages/home/home';
+import { AddProductPage } from '../pages/add-product/add-product';
+import { AddRatesPage } from '../pages/add-rates/add-rates';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { ProfilePage } from '../pages/profile/profile';
+import { CommunicationPage } from '../pages/communication/communication';
+import { DealerListPage } from '../pages/dealer-list/dealer-list';
+
+
 @NgModule({
   declarations: [
     MyApp,
     SearchPage,
     ListPage,
+    // Navigation
+    FeedsPage,
+    HomePage,
+    AddProductPage,
+    AddRatesPage,
+    LoginPage,
+    SignupPage,
+    ProfilePage,
+    CommunicationPage,
+    DealerListPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +48,17 @@ import { ComponentsModule} from "../components/components.module";
   entryComponents: [
     MyApp,
     SearchPage,
-    ListPage
+    ListPage,
+    // Navigation
+    FeedsPage,
+    HomePage,
+    AddProductPage,
+    AddRatesPage,
+    LoginPage,
+    SignupPage,
+    ProfilePage,
+    CommunicationPage,
+    DealerListPage
   ],
   providers: [
     StatusBar,

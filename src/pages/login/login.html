@@ -2,7 +2,7 @@
   <ion-navbar>
       <!-- <ion-icon style="font-size: 35px; margin-left: 5px" name="ios-arrow-back"></ion-icon> -->
       <ion-buttons end>
-          <button ion-button style=" margin-right: 15px">
+          <button (click)="goTosigUp()" ion-button style=" margin-right: 15px">
             <!-- <ion-icon name="ios-more"></ion-icon> -->
             <p>Sign up</p>
           </button>
@@ -20,11 +20,11 @@
         <input-field InputPlaceholder="Password"></input-field>
   
         <button href="tel:1234567" class="styleforget">Forget Password ?</button>
-        <z-button btnText="Login" buttonStyle="SignupButton"></z-button>
+        <z-button (click)="goToprofile()" btnText="Login" buttonStyle="SignupButton"></z-button>
       </ion-card-content>
       <div style="text-align: center;">
         <p style="display: inline-block;">Don't Have Account?</p>
-        <button href="tel:1234567" class="styleforget" style="color: #6ad969">Sign Up</button>
+        <button (click)="goTosigUp()" class="styleforget" style="color: #6ad969">Sign Up</button>
       </div>
   
   </ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+//Navigation
+import { AddRatesPage } from '../add-rates/add-rates'
 /**
  * Generated class for the AddProductPage page.
  *
@@ -20,6 +22,10 @@ export class AddProductPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddProductPage');
+  }
+  //Navigation
+  goToaddRate(){
+    this.navCtrl.push(AddRatesPage);
   }
 
 }

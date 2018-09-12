@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Nav } from 'ionic-angular';
+//Navigation
+import { FeedsPage } from '../feeds/feeds'
 
 @Component({
   selector: 'page-search',
@@ -9,6 +11,10 @@ export class SearchPage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+  // Navigation
+  goTofeeds(){
+    this.navCtrl.push(FeedsPage);
   }
 
 }
