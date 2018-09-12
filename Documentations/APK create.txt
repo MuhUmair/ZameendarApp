@@ -1,0 +1,12 @@
+instruction https://ionicframework.com/docs/v1/guide/publishing.html
+Video Help https://www.youtube.com/watch?v=OCIBpOzMVi8
+
+1) Java JDK
+2) Gradle
+3) Android Stodio 
+4) create virtual device
+5) Install andriod sdk 26
+6) create app-release-unsigned.apk
+7) find zipalign.exe from installed sdk folder 
+8) zipalign.exe and app-release-unsigned.apk should be in same folder
+8) 
