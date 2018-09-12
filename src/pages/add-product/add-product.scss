@@ -1,60 +1,90 @@
 page-add-product {
-    #card_margin{
-        margin-top: 52px;
-      }
-      .text_align{
-        color: white;
-        text-align: center !important;
-      }
-      .SearchText{
-        margin-left: 26%;
-        //color: white;
-      }
-      .toolbar-background-md{
-        background: transparent !important;
-      }
-      .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
-        background-image: none !important;
-      }
-      .background_div{
-        background-color: #6ad969 !important;
-        height: 392px;
-        width: 130%;
-        margin-top: -15%;
-        margin-left: -15%;
-        //-webkit-transform: rotate(2deg);
-        transform: rotate(14deg);
-      }
-      .toolbar-title-md{
-        color: white;
-      }
-      .icon icon-md ion-md-menu{
-        color: white;
-      }
-      .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-defaul{
-        color: white;
-      }
-      
-      
-      ion-select{
-        max-width: 132%;
-        border: solid 1px #e1e1e1;
+  #card_margin{
+    margin-top: 52px;
+  }
+  .text_align{
+    color: white;
+    text-align: center !important;
+  }
+  .SearchText{
+    margin-left: 26%;
+    //color: white;
+  }
+  .toolbar-background-md{
+    background: transparent !important;
+  }
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    background-image: none !important;
+  }
+  .background_div{
+    background-color: #6ad969 !important;
+    height: 392px;
+    width: 130%;
+    margin-top: -15%;
+    margin-left: -15%;
+    //-webkit-transform: rotate(2deg);
+    transform: rotate(14deg);
+  }
+  .toolbar-title-md{
+    color: white;
+  }
+  .icon icon-md ion-md-menu{
+    color: white;
+  }
+  .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-defaul{
+    color: white;
+  }
+  
+  
+  ion-select{
+    max-width: 132%;
+    border: solid 1px #e1e1e1;
+    border-radius: 5px;
+    }
+  .select-text{
+    min-width: 237px;
+    font-size: 17px;
+  }
+  .item-md{
+      padding-left: 0px;
+  }
+  .item-md.item-block .item-inner{
+      padding-right: 0px;
+  }
+  .select-md .select-icon{
+      height: 25px;
+  }
+  ion-icon{
+      font-size: 35px;
+  }
+  .des-product{
+    border: solid 1px #e1e1e1;
+    border-radius: 5px;
+  }
+  .text-input-md{
+    padding: 14px 0px 14px 13px !important;
+    margin: 0px !important;
+    font-size: 17px;
+  }
+  .img-div
+    {
+        display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+    }
+    .img-item
+    {
+        width: 20%;
+        border: 1px solid #ccc;
+        padding: 3px;
         border-radius: 5px;
-       }
-      .select-text{
-        min-width: 237px;
-        font-size: 17px;
-      }
-      .item-md{
-          padding-left: 0px;
-      }
-      .item-md.item-block .item-inner{
-          padding-right: 0px;
-      }
-      .select-md .select-icon{
-          height: 25px;
-      }
-      ion-icon{
-          font-size: 35px;
-      }
+    }
+    .main-div
+    {
+        overflow: hidden;
+    }
+    .sub-div
+    {
+        margin-bottom: 5%;
+    }
 }

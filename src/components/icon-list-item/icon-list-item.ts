@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 
 /**
  * Generated class for the IconListItemComponent component.

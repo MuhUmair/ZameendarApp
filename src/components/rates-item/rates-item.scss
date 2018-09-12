@@ -9,7 +9,7 @@ rates-item {
     .span
     {
         float: left;
-        width: 10%;
+        width: 8%;
         font-weight: bold;
         margin: 16px 10px 0 21px;
     }
@@ -32,6 +32,10 @@ rates-item {
         width: 20%;
         border: 1px solid #ccc;
         padding: 3px;
+        border-radius: 5px;
+    }
+    .des-rate{
+        border: solid 1px #e1e1e1;
         border-radius: 5px;
     }
 }
