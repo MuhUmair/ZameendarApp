@@ -9,4 +9,3 @@ Video Help https://www.youtube.com/watch?v=OCIBpOzMVi8
 6) create app-release-unsigned.apk
 7) find zipalign.exe from installed sdk folder 
 8) zipalign.exe and app-release-unsigned.apk should be in same folder
-8) 
