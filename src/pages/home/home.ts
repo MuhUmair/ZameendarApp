@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //Navigation
 import { LoginPage } from '../login/login'
 import { SignupPage } from '../signup/signup'
+import {UserServiceProvider} from '../../providers/user-service/user-service';
 
 
 
@@ -20,7 +21,11 @@ import { SignupPage } from '../signup/signup'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public people: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider) {
+    this.loadPeople();
+    alert("sas");
+    
   }
 
   ionViewDidLoad() {
@@ -32,5 +37,12 @@ export class HomePage {
   }
   goTosigUp(){
     this.navCtrl.push(SignupPage);
+  }
+  loadPeople(){
+    this.UserServiceProvider.load()
+    .then(data => {
+      this.people = data;
+      console.log(data);
+    });
   }
 }
