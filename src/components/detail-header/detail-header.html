@@ -6,12 +6,35 @@
             <p><b>{{item.Name}}</b></p>
             <p class="date-time">{{item.Date}} at {{item.Time}}</p>
         </div>
-        <div class="header-div sub-div">
-            <p><b>{{item.MinAmount}} - {{item.MaxAmount}} Rs</b></p>
+        <div *ngIf="item.Type == 'feed'">
+            <div class="header-div sub-div">
+                <p><b>{{item.MinAmount}} - {{item.MaxAmount}} Rs</b></p>
+            </div>
         </div>
+
 </ion-item>
 <ion-card-content>
   <p>{{item.Text}}</p>
 </ion-card-content>
-<img src="assets/imgs/main.png">
+<div *ngIf="item.Type == 'multyfeed'">
+    <div *ngFor="let obj of item.multiitem">
+        <ion-item>
+            <ion-avatar item-start>
+            <img class="img" src="{{obj.ImagePath}}">
+            </ion-avatar>
+                <div class="header-div">
+                    <p><b>{{obj.Name}}</b></p><br/>
+                    <p class="phone text">{{obj.Phone}}</p>
+                </div>
+                <div class="header-div sub-div">
+                    <p class="dealer text">{{obj.Category}}</p><br/>
+                    <p class="dealer text">{{obj.Followers}}</p>
+                </div>
+        </ion-item>
+    </div>
+</div>
+<div *ngIf="item.Type == 'feed'">
+    <img src="assets/imgs/main.png">
+</div>
+
 

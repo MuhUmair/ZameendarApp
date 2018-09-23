@@ -16,4 +16,33 @@ detail-header {
 {
     color:#868686
 }
+.header-div
+    {
+        float:left;
+        width:63%;
+    }
+    .sub-div
+    {
+        width: 35%;
+    }
+    .phone
+    {
+        font-size: 12px;
+    }
+    .dealer
+    {
+        text-align: right;
+    }
+    .text
+    {
+        color:#c5c5c5
+    }
+    .img
+    {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .item-inner{
+        margin: 5px 0 5px 0px;
+    }
 }

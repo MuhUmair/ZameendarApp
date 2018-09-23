@@ -11,9 +11,19 @@ import { Component, ElementRef, Input } from '@angular/core';
   templateUrl: 'detail-header.html'
 })
 export class DetailHeaderComponent {
-  @Input() item:{Name:string,Date:string,Time:string,MinAmount:number,MaxAmount:number,Text:string,Comment:number,Follow:number}
+  @Input() item:{
+    Name:string,
+    Date:string,
+    Time:string,
+    MinAmount:number,
+    MaxAmount:number,
+    Text:string,
+    Comment:number,
+    Follow:number,
+    Type:string,
+    multiitem:[{Name:string,Phone:string,Followers:number,ImagePath:string}]
+  }
   constructor(elem:ElementRef) {
-    console.log('Hello DetailHeaderComponent Component');
    this.item = elem.nativeElement.getAttribute('item');
   }
 
