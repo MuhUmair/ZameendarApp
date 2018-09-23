@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
+import {UserServiceProvider} from '../../providers/user-service/user-service';
 
 /**
  * Generated class for the HomeComponent component.
@@ -16,13 +17,20 @@ export class HomeComponent {
   sliderTitle: string;
   avatarhomeImg: string;
   avatarhomeTitle: string;
+  public people: any;
 
-  constructor(elm: ElementRef) {
+  constructor(elm: ElementRef,public UserServiceProvider: UserServiceProvider) {
     this.sliderTitle = elm.nativeElement.getAttribute('sliderTitle');
     this.avatarhomeImg = elm.nativeElement.getAttribute('avatarhomeImg');
     this.avatarhomeTitle = elm.nativeElement.getAttribute('avatarhomeTitle');
     console.log('Hello HomeComponent Component');
     // this.text = 'Hello World';
   }
-
+  loadPeople(){
+    this.UserServiceProvider.load()
+    .then(data => {
+      this.people = data;
+      console.log(data);
+    });
+  }
 }

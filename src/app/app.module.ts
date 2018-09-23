@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -21,6 +22,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { CommunicationPage } from '../pages/communication/communication';
 import { DealerListPage } from '../pages/dealer-list/dealer-list';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 
 @NgModule({
@@ -41,6 +43,7 @@ import { DealerListPage } from '../pages/dealer-list/dealer-list';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
       ComponentsModule,
   ],
@@ -63,7 +66,8 @@ import { DealerListPage } from '../pages/dealer-list/dealer-list';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserServiceProvider
   ]
 })
 export class AppModule {}
