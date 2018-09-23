@@ -17,8 +17,8 @@ export class AddRatesPage {
   items: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items = [
-      {Name:'Peas',Image:'../../assets/imgs/peas.png'},
-      {Name:'Brinjal',Image:'../../assets/imgs/brinjal.png'}];
+      {Name:'Peas',Image:'assets/imgs/peas.png'},
+      {Name:'Brinjal',Image:'assets/imgs/brinjal.png'}];
   }
 
   ionViewDidLoad() {

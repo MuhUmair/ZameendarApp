@@ -10,6 +10,13 @@ import { HomePage } from '../pages/home/home';
 import { AddProductPage } from '../pages/add-product/add-product';
 import { CommunicationPage } from '../pages/communication/communication';
 import { DealerListPage } from '../pages/dealer-list/dealer-list';
+import { FeedsPage } from '../pages/feeds/feeds';
+import { SignupPage } from '../pages/signup/signup';
+import { LoginPage } from '../pages/login/login';
+import { AddRatesPage } from '../pages/add-rates/add-rates';
+import { ProfilePage } from '../pages/profile/profile';
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +24,7 @@ import { DealerListPage } from '../pages/dealer-list/dealer-list';
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = SearchPage;
+    rootPage: any = HomePage;
 
     pages: Array<{ title: string, component: any }>;
 
@@ -59,7 +66,24 @@ export class MyApp {
     goTodealerList(){
         this.nav.push(DealerListPage);
     }
-    
+    goTofeeds(){
+        this.nav.push(FeedsPage);
+    }
+    goTologin(){
+        this.nav.push(LoginPage);
+    }
+    goTosignUp(){
+        this.nav.push(SignupPage);
+    }
+    goToaddRates(){
+        this.nav.push(AddRatesPage);
+    }
+    goToprofile(){
+        this.nav.push(ProfilePage);
+    }
+    goTosearch(){
+        this.nav.push(SearchPage);
+    }
 }
 
 
