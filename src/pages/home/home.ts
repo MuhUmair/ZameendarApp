@@ -24,7 +24,7 @@ export class HomePage {
   public people: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider) {
     this.loadPeople();
-    alert("sas");
+
     
   }
 
