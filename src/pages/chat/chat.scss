@@ -4,4 +4,26 @@ page-chat {
         width: 60px !important;
         height: 60px !important;
     }
+    .scroll-content{
+        padding: 0 !important;
+        margin-top: 57px !important;
+    }
+    .p-clr-sender
+    {
+        background-color: #e2e2e2;
+        float: left;
+    }
+    .p-clr-reciever
+    {
+        background-color: lightblue;
+        float: right;
+    }
+    .p-border
+    {
+        padding: 4%;
+        border-radius: 10px;
+        width: 68%;
+        font-size: 14px;
+        margin-bottom: 0 !important;
+    }
 }
