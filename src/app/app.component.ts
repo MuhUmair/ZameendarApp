@@ -15,6 +15,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { AddRatesPage } from '../pages/add-rates/add-rates';
 import { ProfilePage } from '../pages/profile/profile';
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 
 
 
@@ -28,7 +29,7 @@ export class MyApp {
 
     pages: Array<{ title: string, component: any }>;
 
-    constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private androidFullScreen: AndroidFullScreen) {
         this.initializeApp();
         // alert(testvar);
         // used for an example of ngFor and navigation
@@ -46,6 +47,10 @@ export class MyApp {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
         });
+
+        this.androidFullScreen.isImmersiveModeSupported()
+  .then(() => console.log('Immersive mode supported'))
+  .catch(err => console.log(err));
     }
 
     openPage(page) {

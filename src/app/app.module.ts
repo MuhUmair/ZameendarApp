@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ComponentsModule} from "../components/components.module";
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 
 // Navigation
 import { FeedsPage } from "../pages/feeds/feeds"
@@ -23,7 +24,6 @@ import { ProfilePage } from '../pages/profile/profile';
 import { CommunicationPage } from '../pages/communication/communication';
 import { DealerListPage } from '../pages/dealer-list/dealer-list';
 import { UserServiceProvider } from '../providers/user-service/user-service';
-
 
 @NgModule({
   declarations: [
@@ -64,6 +64,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     DealerListPage
   ],
   providers: [
+    AndroidFullScreen,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
