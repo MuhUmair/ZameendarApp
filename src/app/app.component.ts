@@ -16,6 +16,8 @@ import { LoginPage } from '../pages/login/login';
 import { AddRatesPage } from '../pages/add-rates/add-rates';
 import { ProfilePage } from '../pages/profile/profile';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
+import { ChatPage } from '../pages/chat/chat';
+
 
 
 
@@ -88,6 +90,9 @@ export class MyApp {
     }
     goTosearch(){
         this.nav.push(SearchPage);
+    }
+    goTochat(){
+        this.nav.push(ChatPage);
     }
 }
 

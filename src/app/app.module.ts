@@ -23,6 +23,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { ProfilePage } from '../pages/profile/profile';
 import { CommunicationPage } from '../pages/communication/communication';
 import { DealerListPage } from '../pages/dealer-list/dealer-list';
+import { ChatPage } from '../pages/chat/chat';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
@@ -39,7 +40,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     SignupPage,
     ProfilePage,
     CommunicationPage,
-    DealerListPage
+    DealerListPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
     SignupPage,
     ProfilePage,
     CommunicationPage,
-    DealerListPage
+    DealerListPage,
+    ChatPage
   ],
   providers: [
     AndroidFullScreen,
