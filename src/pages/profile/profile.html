@@ -15,11 +15,54 @@
           California, New Street</p>
       </div>
     </div>
+  
+
+
   </ion-navbar>
+  <ion-toolbar class="segment-toolbar" no-border-top>
+    <ion-segment class="segment-nav" [(ngModel)]="profileSegment">
+      <ion-segment-button class="segment-btn" value="products">
+        <p>40</p>
+        Product
+      </ion-segment-button>
+      <ion-segment-button class="segment-btn" value="rates">
+        <p>507</p>
+        Rates
+      </ion-segment-button>
+      <ion-segment-button value="about">
+       <p class="p-head"><ion-icon name="pricetag"></ion-icon></p>
+        About
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding style="background: transparent">
-  <ion-card  id="card_margin" *ngFor="let item of items">
-    <dealer-list-item [item]="item"></dealer-list-item>
-  </ion-card>
-</ion-content>
+    <div [ngSwitch]="profileSegment">
+      <div *ngSwitchCase="'products'">
+        <ion-card id="card_margin" *ngFor="let item of items">
+            <dealer-list-item [item]="item"></dealer-list-item>
+        </ion-card>
+      </div>
+      <div *ngSwitchCase="'rates'">
+        <ion-card><p>rates</p></ion-card>
+      </div>
+      <div *ngSwitchCase="'about'">
+          <ion-card><p>about</p></ion-card>
+      </div>
+    </div>
+  </ion-content>
+
+<!-- <ion-content padding style="background: transparent">
+  <div [ngSwitch]="profile">
+      <ion-card id="card_margin"  *ngSwitchCase="'products'" *ngFor="let item of items">
+          <dealer-list-item [item]="item"></dealer-list-item>
+      </ion-card>
+      <ion-card id="card_margin"  *ngSwitchCase="'rates'">
+          <dealer-list-item>Rates</dealer-list-item>
+      </ion-card>
+      <ion-card id="card_margin"  *ngSwitchCase="'about'">
+          <dealer-list-item>About</dealer-list-item>
+      </ion-card>
+  </div>
+</ion-content> -->
