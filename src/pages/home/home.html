@@ -44,7 +44,14 @@
   <h2 class="item-title">Artee</h2>
 
   <ion-row>
-    <ion-item no-lines style="padding: 0px">
+    <ion-item *ngFor="let item of arteeList">
+        <ion-scroll scrollX="true" scroll-avatar>
+          <ion-avatar>
+            <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+          </ion-avatar> 
+        </ion-scroll>
+    </ion-item>
+    <!-- <ion-item no-lines style="padding: 0px">
       <ion-scroll scrollX="true" scroll-avatar>
         <ion-avatar>
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
@@ -57,13 +64,20 @@
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
         </ion-avatar>
       </ion-scroll>
-    </ion-item>
+    </ion-item> -->
   </ion-row>
 
   <h2 class="item-title" >Tractor</h2>
   <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
   <ion-row>
-    <ion-item no-lines style="padding: 0px">
+      <ion-item *ngFor="let item of tractorList">
+          <ion-scroll scrollX="true" scroll-avatar>
+            <ion-avatar>
+              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+            </ion-avatar> 
+          </ion-scroll>
+      </ion-item>
+    <!-- <ion-item no-lines style="padding: 0px">
       <ion-scroll scrollX="true" scroll-avatar>
         <ion-avatar>
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
@@ -76,14 +90,21 @@
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
         </ion-avatar>
       </ion-scroll>
-    </ion-item>
+    </ion-item> -->
   </ion-row>
 
 
   <h2 class="item-title" >Cold Storage</h2>
   <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
   <ion-row>
-    <ion-item no-lines style="padding: 0px">
+      <ion-item *ngFor="let item of coldStorageList">
+          <ion-scroll scrollX="true" scroll-avatar>
+            <ion-avatar>
+              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+            </ion-avatar> 
+          </ion-scroll>
+      </ion-item>
+          <!-- <ion-item no-lines style="padding: 0px">
       <ion-scroll scrollX="true" scroll-avatar>
         <ion-avatar>
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
@@ -96,7 +117,7 @@
           <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
         </ion-avatar>
       </ion-scroll>
-    </ion-item>
+    </ion-item> -->
   </ion-row>
 
 

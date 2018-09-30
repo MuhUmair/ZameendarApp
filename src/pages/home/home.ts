@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login'
 import { SignupPage } from '../signup/signup'
 import {UserServiceProvider} from '../../providers/user-service/user-service';
+import {HomeServiceProvider} from '../../providers/home-service/home-service';
+import { DebugContext } from '@angular/core/src/view';
 
 
 
@@ -20,10 +22,13 @@ import {UserServiceProvider} from '../../providers/user-service/user-service';
   templateUrl: 'home.html',
 })
 export class HomePage {
-
+  arteeList: any;
+  coldStorageList:any;
+  tractorList:any;
   public people: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider) {
-    this.loadPeople();
+  constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider
+    , public HomeServiceProvider: HomeServiceProvider) {
+    this.loadList();
 
     
   }
@@ -44,5 +49,21 @@ export class HomePage {
       this.people = data;
       console.log(data);
     });
+  }
+  loadList()
+  {
+    this.HomeServiceProvider.getHomeList()
+    .then(data => {
+      debugger
+      this.arteeList = data.artees;
+      this.coldStorageList = data.storages;
+      this.tractorList = data.tracktors;
+
+      console.log(this.arteeList);
+      console.log(this.coldStorageList);
+      console.log(this.tractorList);
+    });
+    
+
   }
 }

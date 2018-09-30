@@ -1,4 +1,4 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 
 /**
  * Generated class for the HorizontalItemSliderComponent component.
@@ -11,16 +11,20 @@ import {Component, ElementRef} from '@angular/core';
   templateUrl: 'horizontal-item-slider.html'
 })
 export class HorizontalItemSliderComponent {
-
-  avatarImg: string;
-  avatarTitle: string;
+  @Input() 
+  avatarImg: any;
+  @Input() 
+  avatarTitle: any;
   // sliderTitle:string;
   constructor(elm: ElementRef) {
-
-    // this.sliderTitle = elm.nativeElement.getAttribute('sliderTitle');
+      // this.sliderTitle = elm.nativeElement.getAttribute('sliderTitle');
     this.avatarImg = elm.nativeElement.getAttribute('avatarImg');
+    if(this.avatarImg == null)
+    {
+      this.avatarImg = "../assests/imgs/no-image.jpg"
+    }
     this.avatarTitle = elm.nativeElement.getAttribute('avatarTitle');
-    console.log('Hello HorizontalItemSliderComponent Component');
+    console.log(this.avatarImg+" | "+this.avatarTitle);
     //this.text = 'Hello World';
   }
 
