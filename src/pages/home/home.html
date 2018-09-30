@@ -43,14 +43,14 @@
   </ion-toolbar>
   <h2 class="item-title">Artee</h2>
 
-  <ion-row>
-    <ion-item *ngFor="let item of arteeList">
-        <ion-scroll scrollX="true" scroll-avatar>
-          <ion-avatar>
-            <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
-          </ion-avatar> 
-        </ion-scroll>
-    </ion-item>
+  <ion-row *ngIf="homeList != null">
+      <ion-item *ngFor="let item of homeList.artees">
+          <ion-scroll scrollX="true" scroll-avatar>
+            <ion-avatar>
+              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+            </ion-avatar> 
+          </ion-scroll>
+      </ion-item>  
     <!-- <ion-item no-lines style="padding: 0px">
       <ion-scroll scrollX="true" scroll-avatar>
         <ion-avatar>
@@ -69,8 +69,8 @@
 
   <h2 class="item-title" >Tractor</h2>
   <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
-  <ion-row>
-      <ion-item *ngFor="let item of tractorList">
+  <ion-row *ngIf="homeList != null">
+      <ion-item *ngFor="let item of homeList.tracktors">
           <ion-scroll scrollX="true" scroll-avatar>
             <ion-avatar>
               <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
@@ -96,8 +96,8 @@
 
   <h2 class="item-title" >Cold Storage</h2>
   <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
-  <ion-row>
-      <ion-item *ngFor="let item of coldStorageList">
+  <ion-row *ngIf="homeList != null">
+      <ion-item *ngFor="let item of homeList.storages">
           <ion-scroll scrollX="true" scroll-avatar>
             <ion-avatar>
               <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>

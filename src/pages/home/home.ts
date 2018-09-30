@@ -22,9 +22,7 @@ import { DebugContext } from '@angular/core/src/view';
   templateUrl: 'home.html',
 })
 export class HomePage {
-  arteeList: any;
-  coldStorageList:any;
-  tractorList:any;
+  homeList:any
   public people: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider
     , public HomeServiceProvider: HomeServiceProvider) {
@@ -54,14 +52,11 @@ export class HomePage {
   {
     this.HomeServiceProvider.getHomeList()
     .then(data => {
-      debugger
-      this.arteeList = data.artees;
-      this.coldStorageList = data.storages;
-      this.tractorList = data.tracktors;
+      this.homeList = data;
 
-      console.log(this.arteeList);
-      console.log(this.coldStorageList);
-      console.log(this.tractorList);
+      // console.log(this.arteeList);
+      // console.log(this.coldStorageList);
+      // console.log(this.tractorList);
     });
     
 
