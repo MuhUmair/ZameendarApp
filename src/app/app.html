@@ -43,9 +43,8 @@
   </ion-content>
 
 </ion-menu>
- <ion-footer>
-    <!-- <ion-toolbar> -->
-
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+ <!-- <ion-footer>
         <ion-toolbar class="segment-toolbar" no-border-top>
             <ion-segment class="segment-nav">
               <ion-segment-button (click)="goToprofile()" class="segment-btn" value="products">
@@ -53,7 +52,7 @@
                 Profile
               </ion-segment-button>
               <ion-segment-button (click)="goTohome()" class="segment-btn" value="rates">
-                <p class="p-head"><ion-icon name="person" class="icon ion-home"></ion-icon></p>
+                <p class="p-head"><ion-icon name="home" class="md-home"></ion-icon></p>
                 Home
               </ion-segment-button>
               <ion-segment-button value="about">
@@ -62,10 +61,4 @@
               </ion-segment-button>
             </ion-segment>
           </ion-toolbar>
-
-      <!-- <ion-title>Footer</ion-title> -->
-      <!-- <ion-tab [root]="chatRoot" tabTitle="Chat" tabIcon="chat"></ion-tab> -->
-
-    <!-- </ion-toolbar> -->
-  </ion-footer>
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+  </ion-footer> -->
