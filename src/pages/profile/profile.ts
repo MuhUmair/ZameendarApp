@@ -18,12 +18,12 @@ export class ProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.profileSegment = 'products',
     this.items = [
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-      {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:'Vegetable',imagePath:'assets/imgs/vegetable.png'},
     ];
   }
 

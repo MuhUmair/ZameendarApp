@@ -26,6 +26,8 @@ import { DealerListPage } from '../pages/dealer-list/dealer-list';
 import { ChatPage } from '../pages/chat/chat';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
+import { DealerServiceProvider } from '../providers/dealer-service/dealer-service';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { HomeServiceProvider } from '../providers/home-service/home-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
-    HomeServiceProvider
+    HomeServiceProvider,
+    DealerServiceProvider
   ]
 })
 export class AppModule {}

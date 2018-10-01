@@ -1,13 +1,30 @@
 <ion-item>
   <ion-avatar item-start>
-    <img class="img" src="{{item.ImagePath}}">
+    <img  class="thumbnail-image" src="http://sarcasmnew.com/Arat/Artee/{{item.imagePath}}"
+        onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+    
   </ion-avatar>
       <div class="header-div">
-          <p><b>{{item.Name}}</b></p><br/>
-          <p class="phone text">{{item.Phone}}</p>
+          <p><b>{{item.name}}</b></p><br/>
+          <p class="phone text">{{item.mobile}}</p>
       </div>
       <div class="header-div sub-div">
-          <p class="dealer text">{{item.Category}}</p><br/>
-          <p class="dealer text">{{item.Followers}}</p>
+          <div *ngIf="item.type == 2">
+                <p class="dealer text">
+                    Tractor
+                </p>
+          </div>
+          <div *ngIf="item.type == 3">
+                <p class="dealer text">
+                    Cold Storage
+                </p>
+          </div>
+          <div *ngIf="item.type == 4">
+                <p class="dealer text">
+                    Artee
+                </p>
+          </div>
+          <br/>
+          <p class="dealer text">{{item.followers}}</p>
       </div>
 </ion-item>

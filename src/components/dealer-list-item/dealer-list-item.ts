@@ -12,10 +12,12 @@ import { Component, ElementRef, Input } from '@angular/core';
 })
 export class DealerListItemComponent {
   @Input() 
-  item:{Name:string,Phone:string,Followers:number,ImagePath:string};
+  item:any;
   constructor(elem:ElementRef) {
-    console.log('Hello DetailListItemComponent Component');
-   this.item = elem.nativeElement.getAttribute('item');
+    this.item = elem.nativeElement.getAttribute('item');
+    // console.log('this.item' + this.item);
+    // debugger
+   
   }
 
 }
