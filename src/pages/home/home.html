@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header style="background-color: #6ad969">
+<!-- <ion-header style="background-color: #6ad969">
 
   <ion-navbar>
     <button ion-button menuToggle right>
@@ -20,9 +20,9 @@
 
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<ion-content class="ion-header-margin">
   <ion-slides pager style="height: 34%">
 
     <!--<z-button btnText="Search" buttonStyle="SearchButtonStyle"></z-button>-->
@@ -41,84 +41,63 @@
     <z-button (click)="goTologin()" style="float: left; margin-left: 8%" ty btnText="LOGIN" buttonStyle="LoginSignupButtonStyle"></z-button>
     <z-button (click)="goTosigUp()" style="float: right; margin-right: 8%" btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></z-button>
   </ion-toolbar>
-  <h2 class="item-title">Artee</h2>
+  <div *ngIf="homeList != null;then mainContent else other_mainContent">Not found</div>    
+  <ng-template #mainContent>
+    
+    <h2 class="item-title">Artee</h2>
+    <div *ngIf="homeList.artees != null;then arteeContent else other_arteeContent"></div>    
+    <ng-template #arteeContent>
+        <ion-row >
+            <ion-item >
+                <ion-scroll scrollX="true" scroll-avatar>
+                  <ion-avatar>
+                    <horizontal-item-slider *ngFor="let item of homeList.artees" avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+                  </ion-avatar> 
+                </ion-scroll>
+            </ion-item>  
+          
+        </ion-row>
+      
+    </ng-template>
+    <ng-template #other_arteeContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></ng-template>
+    
+    <h2 class="item-title" >Tractor</h2>
+    <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
+    <div *ngIf="homeList.tracktors != null;then tractorContent else other_tractorContent"></div>    
+    <ng-template #tractorContent>
+        <ion-row >
+            <ion-item >
+                <ion-scroll scrollX="true" scroll-avatar>
+                  <ion-avatar>
+                    <horizontal-item-slider *ngFor="let item of homeList.tracktors" avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+                  </ion-avatar> 
+                </ion-scroll>
+            </ion-item>
+          
+        </ion-row>
+      
+    </ng-template>
+    <ng-template #other_tractorContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></ng-template>
+    
+    <h2 class="item-title" >Cold Storage</h2>
+    <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
+    <div *ngIf="homeList != null;then storageContent else other_storageContent"></div>    
+    <ng-template #storageContent>
+        <ion-row *ngIf="homeList.storages != null">
+            <ion-item >
+                <ion-scroll scrollX="true" scroll-avatar>
+                  <ion-avatar>
+                    <horizontal-item-slider *ngFor="let item of homeList.storages" avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+                  </ion-avatar> 
+                </ion-scroll>
+            </ion-item>
+        </ion-row>
+      
+    </ng-template>
+    <ng-template #other_storageContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></ng-template>
+  </ng-template>
+<ng-template #other_mainContent><div style="width: 100%;text-align: center;margin-top: 100px"><ion-spinner></ion-spinner></div></ng-template>
 
-  <ion-row *ngIf="homeList != null">
-      <ion-item *ngFor="let item of homeList.artees">
-          <ion-scroll scrollX="true" scroll-avatar>
-            <ion-avatar>
-              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
-            </ion-avatar> 
-          </ion-scroll>
-      </ion-item>  
-    <!-- <ion-item no-lines style="padding: 0px">
-      <ion-scroll scrollX="true" scroll-avatar>
-        <ion-avatar>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-        </ion-avatar>
-      </ion-scroll>
-    </ion-item> -->
-  </ion-row>
-
-  <h2 class="item-title" >Tractor</h2>
-  <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
-  <ion-row *ngIf="homeList != null">
-      <ion-item *ngFor="let item of homeList.tracktors">
-          <ion-scroll scrollX="true" scroll-avatar>
-            <ion-avatar>
-              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
-            </ion-avatar> 
-          </ion-scroll>
-      </ion-item>
-    <!-- <ion-item no-lines style="padding: 0px">
-      <ion-scroll scrollX="true" scroll-avatar>
-        <ion-avatar>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-        </ion-avatar>
-      </ion-scroll>
-    </ion-item> -->
-  </ion-row>
-
-
-  <h2 class="item-title" >Cold Storage</h2>
-  <!--<horizontal-item-slider btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></horizontal-item-slider>-->
-  <ion-row *ngIf="homeList != null">
-      <ion-item *ngFor="let item of homeList.storages">
-          <ion-scroll scrollX="true" scroll-avatar>
-            <ion-avatar>
-              <horizontal-item-slider avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
-            </ion-avatar> 
-          </ion-scroll>
-      </ion-item>
-          <!-- <ion-item no-lines style="padding: 0px">
-      <ion-scroll scrollX="true" scroll-avatar>
-        <ion-avatar>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-          <horizontal-item-slider avatarImg="assets/tractor.png" avatarTitle="Avatar1"></horizontal-item-slider>
-        </ion-avatar>
-      </ion-scroll>
-    </ion-item> -->
-  </ion-row>
-
+    
 
 </ion-content>

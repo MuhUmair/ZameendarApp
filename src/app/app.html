@@ -1,3 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button style="color:white !important" ion-button menuToggle right>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align:center" id="hName">HOME</ion-title>
+
+    <!-- <ion-buttons end style=" position: absolute;">
+      <button ion-button style="background-color: #6ad969; font-size: 28px">
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons> -->
+
+  </ion-navbar>
+
+</ion-header>
+
 <ion-menu [content]="content" side="right">
   <!--<ion-header>-->
     <!--<ion-toolbar>-->
@@ -33,11 +50,8 @@
     <icon-list-item (click)="goTofeeds()" iconClass="ios-mail-outline" displayText="Feeds" badgeCount=""></icon-list-item>
     <icon-list-item (click)="goTologin()" iconClass="ios-mail-outline" displayText="Login" badgeCount=""></icon-list-item>
     <icon-list-item (click)="goTosignUp()" iconClass="ios-mail-outline" displayText="Sign Up" badgeCount=""></icon-list-item>
-
     <icon-list-item (click)="goToaddRates()" iconClass="ios-mail-outline" displayText="Add Rates" badgeCount=""></icon-list-item>
-
     <icon-list-item (click)="goToprofile()" iconClass="ios-mail-outline" displayText="Profile" badgeCount=""></icon-list-item>
-
     <icon-list-item (click)="goTosearch()" iconClass="ios-mail-outline" displayText="Search" badgeCount=""></icon-list-item>
     <icon-list-item (click)="goTochat()" iconClass="ios-mail-outline" displayText="Chat" badgeCount=""></icon-list-item>
 
@@ -46,4 +60,30 @@
   </ion-content>
 
 </ion-menu>
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav class="my-scroll-content" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+ <ion-footer>
+        <ion-toolbar class="segment-toolbar" no-border-top>
+            <ion-segment class="segment-nav">
+              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
+                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
+                Profile
+              </ion-segment-button>
+              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
+                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
+                Profile
+              </ion-segment-button>
+              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
+                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
+                Profile
+              </ion-segment-button>
+              <ion-segment-button (click)="goTohome()" class="segment-btn Sizeoffont" value="rates">
+                <p class="p-head"><ion-icon name="home" class="md-home set-size"></ion-icon></p>
+                Home
+              </ion-segment-button>
+              <ion-segment-button value="about" class="segment-btn Sizeoffont">
+                <p class="p-head"><ion-icon name="pricetag" class="set-size"></ion-icon></p>
+                About
+              </ion-segment-button>
+            </ion-segment>
+          </ion-toolbar>
+  </ion-footer>

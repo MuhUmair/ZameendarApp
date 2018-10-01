@@ -3,7 +3,9 @@
 
 
         <div class="scroll-item">
-          <img src="{{avatarImg}}"/>
-          <h5 style="text-align: center">{{avatarTitle}}</h5>
+            <img  class="thumbnail-image" src="http://sarcasmnew.com/Arat/Artee/{{avatarImg}}"
+            onError="this.src='../assets/imgs/no-image.jpg';"  alt="..." />
+            
+          <h5 style="text-align: center">{{ (avatarTitle.length>8)? (avatarTitle | slice:0:8)+'..':(avatarTitle) }}</h5>
         </div>
 

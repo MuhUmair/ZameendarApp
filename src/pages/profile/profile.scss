@@ -3,6 +3,7 @@ ion-header
 {
     ion-navbar
     {
+        margin-top: 56px !important;
         div.toolbar-background
         {
             background-image: url(../assets/imgs/menubackground.png) !important;
@@ -10,6 +11,15 @@ ion-header
             background-size: cover !important;
         }
     }
+}
+.back-button
+{
+    display: none !important;
+}
+.scroll-content
+{
+    padding-right:0px !important; 
+    padding-left:0px !important; 
 }
 ion-tab
 {
@@ -51,3 +61,11 @@ ion-segment-button {
       margin-bottom: 1px !important;
   }
 }
+// ion-header
+// {
+//   visibility: hidden !important;
+// }
+// ion-footer
+// {
+//   visibility: visible !important;
+// }
