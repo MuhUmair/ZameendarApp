@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -18,8 +19,8 @@ export class ProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.profileSegment = 'products',
     this.items = [
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:2,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:2,imagePath:'img/products/1519054390_483465.jpg'},
+      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'img/products/1519054390_483465.jpg'},
       {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
       {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
       {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},

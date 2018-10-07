@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input } from '@angular/core';
-
+import * as Constants  from '../../providers/constant/constants';
 /**
  * Generated class for the DealerListItemComponent component.
  *
@@ -13,8 +13,10 @@ import { Component, ElementRef, Input } from '@angular/core';
 export class DealerListItemComponent {
   @Input() 
   item:any;
+  baseURL:string;
   constructor(elem:ElementRef) {
     this.item = elem.nativeElement.getAttribute('item');
+    this.baseURL = Constants.API_ENDPOINT;
     // console.log('this.item' + this.item);
     // debugger
    
