@@ -1,19 +1,19 @@
-import { IUser } from './../common/IUser';
+import { ICUser } from './../common/IUser';
 
 export interface ILoginWrapper{
     bPath?:string,
     uImg?:string,
-    authUser?:IUser,
+    authUser?:ICUser,
     now?:string,
-    user?:IUser
+    user?:ICUser
 }
 
 export class ICLoginWrapper{
     constructor(
         public bPath:string,
         public uImg:string,
-        public authUser:IUser,
+        public authUser:ICUser,
         public now:string,
-        public user:IUser
+        public user:ICUser
     ){}
 }

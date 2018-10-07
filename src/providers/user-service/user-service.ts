@@ -34,4 +34,12 @@ export class UserServiceProvider {
         });
     });
   }
+  userLogout() {
+    return new Promise(resolve => {
+      this.http.get(Constants.API_ENDPOINT + '/user/jLogout.json')
+        .subscribe(data => {
+          resolve(data);
+        });
+    });
+  }
 }

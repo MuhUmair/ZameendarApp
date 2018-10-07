@@ -1,3 +1,4 @@
+import { GlobalVars } from './../../globals/globalVar';
 import { Component } from '@angular/core';
 import { ICLoginWrapper } from './../../Interfaces/wrapper/ILoginWrapper';
 import { UserServiceProvider } from './../../providers/user-service/user-service';
@@ -24,8 +25,8 @@ import { ProfilePage } from '../profile/profile'
 export class LoginPage {
   mobile: string;
   password: string;
-  lData:ICLoginWrapper
-  constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider, private storage: Storage) {
+  lData:ICLoginWrapper;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider, private storage: Storage, public globalVars: GlobalVars) {
   }
   isLogin(){
     this.UserServiceProvider.userLogin({mobile:this.mobile, password:this.password})
@@ -34,7 +35,12 @@ export class LoginPage {
       if(this.lData.authUser){
         this.storage.remove("authLogin");
         this.storage.set("authLogin", this.lData);
-        this.goToprofile();
+        this.globalVars.loginState = true;
+        this.globalVars.setLoginDBData().then((data:ICLoginWrapper) => {
+          this.lData = data;
+          this.goToprofile();
+        });
+        
       }
 
       // console.log(this.arteeList);
