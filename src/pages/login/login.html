@@ -15,12 +15,12 @@
     <p class="text_align" style="font-size: 23px; margin-bottom: 0px">Welcom Friends !!</p>
       <ion-card-content>
         <input-label></input-label>
-        <input-field InputPlaceholder="Phone Number"></input-field>
+        <input-field InputPlaceholder="Phone Number" [(ngModel)]="mobile"></input-field>
         <input-label></input-label>
-        <input-field InputPlaceholder="Password"></input-field>
+        <input-field InputPlaceholder="Password" inputType="password" [(ngModel)]="password"></input-field>
   
         <button href="tel:1234567" class="styleforget">Forget Password ?</button>
-        <z-button (click)="goToprofile()" btnText="Login" buttonStyle="SignupButton"></z-button>
+        <z-button (click)="isLogin()" btnText="Login" buttonStyle="SignupButton"></z-button>
       </ion-card-content>
       <div style="text-align: center;">
         <p style="display: inline-block;">Don't Have Account?</p>

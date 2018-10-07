@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
@@ -49,8 +50,9 @@ import { DealerServiceProvider } from '../providers/dealer-service/dealer-servic
   imports: [
     BrowserModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
-      ComponentsModule,
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
