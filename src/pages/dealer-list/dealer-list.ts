@@ -38,7 +38,7 @@ export class DealerListPage {
     .then(data => {
       this.items = data;
 
-      console.log(this.items);
+      console.log("whwkehrkj",this.items);
       // console.log(this.coldStorageList);
       // console.log(this.tractorList);
     }); 

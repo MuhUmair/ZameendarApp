@@ -54,7 +54,8 @@ export class HomePage {
     .then(data => {
       this.homeList = data;
 
-      // console.log(this.arteeList);
+      console.log("whwkehrkj",this.homeList);
+      // console.log("whwkehrkj",this.items);
       // console.log(this.coldStorageList);
       // console.log(this.tractorList);
     });

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ProfileServiceProvider} from '../../providers/profile-service/profile-service';
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -14,21 +16,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
   profileSegment: any;
-  items: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.profileSegment = 'products',
-    this.items = [
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:2,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
-      {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
-    ];
+  profileList: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ProfileServiceProvider: ProfileServiceProvider) {
+    this.loadProfileList();
+    this.profileSegment = 'products'
+    // this.profileList = [
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:2,imagePath:'assets/imgs/vegetable.png'},
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+    //   {name:'Capsicum',mobile:'Product Description',followers:'100 Rs',type:3,imagePath:'assets/imgs/vegetable.png'},
+    // ];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+  }
+  loadProfileList(){
+
+    this.ProfileServiceProvider.getProfileList()
+    .then(data => {
+      this.profileList = data;
+
+      console.log("Profile Data",this.profileList);
+      // console.log(this.coldStorageList);
+      // console.log(this.tractorList);
+    }); 
   }
 
 }

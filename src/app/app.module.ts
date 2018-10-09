@@ -27,6 +27,8 @@ import { ChatPage } from '../pages/chat/chat';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { DealerServiceProvider } from '../providers/dealer-service/dealer-service';
+import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
+
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { DealerServiceProvider } from '../providers/dealer-service/dealer-servic
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
     HomeServiceProvider,
-    DealerServiceProvider
+    DealerServiceProvider,
+    ProfileServiceProvider
   ]
 })
 export class AppModule {}
