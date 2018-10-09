@@ -72,65 +72,52 @@ export class MyApp {
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
     }
-    setHeaderName(name){
-        if(name == "Login" ||name == "SignUp")
-        {
-            jQuery(".header").css("display","none","important");
-            jQuery(".footer").css("display","none","important");
-        }
-        else
-        {
-            jQuery(".toolbar-title").html(name);
-            jQuery(".header").css("display","block","important");
-            jQuery(".footer").css("display","block","important");
-        }
-
-    }
+   
 
 
 // Navigation
     goTohome(){
-        this.setHeaderName("Home");
+        this.globalVars.setHeaderName("Home");
         this.nav.push(HomePage);
     }
     goToaddProduct(){
-        this.setHeaderName("Add Product");
+        this.globalVars.setHeaderName("Add Product");
         this.nav.push(AddProductPage);
     }
     goTocommunication(){
-        this.setHeaderName("Communication");
+        this.globalVars.setHeaderName("Communication");
         this.nav.push(CommunicationPage);
     }
     goTodealerList(){
-        this.setHeaderName("Dealer List");
+        this.globalVars.setHeaderName("Dealer List");
         this.nav.push(DealerListPage);
     }
     goTofeeds(){
-        this.setHeaderName("Feeds");
+        this.globalVars.setHeaderName("Feeds");
         this.nav.push(FeedsPage);
     }
     goTologin(){
-        this.setHeaderName("Login");
+        this.globalVars.setHeaderName("Login");
         this.nav.push(LoginPage);
     }
     goTosignUp(){
-        this.setHeaderName("SignUp");
+        this.globalVars.setHeaderName("SignUp");
         this.nav.push(SignupPage);
     }
     goToaddRates(){
-        this.setHeaderName("Rates");
+        this.globalVars.setHeaderName("Rates");
         this.nav.push(AddRatesPage);
     }
     goToprofile(){
-        this.setHeaderName("Profile");
+        this.globalVars.setHeaderName("Profile");
         this.nav.push(ProfilePage);
     }
     goTosearch(){
-        this.setHeaderName("Search");
+        this.globalVars.setHeaderName("Search");
         this.nav.push(SearchPage);
     }
     goTochat(){
-        this.setHeaderName("Chat");
+        this.globalVars.setHeaderName("Chat");
         this.nav.push(ChatPage);
     }
     logout(){

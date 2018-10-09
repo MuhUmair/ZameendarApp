@@ -6,7 +6,7 @@
       <!-- <div *ngIf="profileList != null;then profileContent else other_profileContent"></div> -->
       <div style="overflow:  hidden;margin: 30px 0 9px 12px;" >
         <div style="float: left;width: 25%">
-            <img style="width: 70%; border-radius: 50px" src="http://sarcasmnew.com/Arat/Artee/{{profileList.data.user.address}}"
+            <img style="width: 70%; border-radius: 50px" src="{{baseURL + '/' + profileList.data.profileimages.url}}"
             onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
 
 
@@ -45,15 +45,41 @@
 
 <ion-content class="ion-header-margin-profile" padding style="background: transparent">
   <div [ngSwitch]="profileSegment">
-    <div *ngSwitchCase="'products'">
-      <ion-card id="card_margin" *ngFor="let item of items">
-          <dealer-list-item [item]="item"></dealer-list-item>
+    <div class="dataDiv" *ngSwitchCase="'products'" >
+        <div *ngIf="profileList != null;then itemList">Not found</div> 
+      <ng-template #itemList>
+        <ion-card id="card_margin" *ngFor="let item of profileList.data.products">
+        <ion-item>
+          <ion-avatar item-start>
+            <img *ngIf="item.autofillproduct != null" class="thumbnail-image" src="{{baseURL + '/img/' + item.autofillproduct.email}}"
+                onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+            <img class="thumbnail-image" *ngIf="item.autofillproduct == null" src="assets/imgs/no-image.jpg"/>
+          </ion-avatar>
+              <div class="header-div">
+                  <p><b>{{item.name}}</b></p><br/>
+                  <p class="phone text">{{item.description}}</p>
+              </div>
+              <div class="header-div sub-div">
+                  <div>
+                        <p *ngIf="item.autofillproduct != null" class="dealer text">
+                            {{item.autofillproduct.pType}}
+                        </p>
+                        <p *ngIf="item.autofillproduct == null" class="dealer text">
+                            Type
+                        </p>
+                  </div>
+                  <br/>
+                  <p class="dealer text">Rates</p>
+              </div>
+        </ion-item>
+        
       </ion-card>
+    </ng-template>
     </div>
-    <div *ngSwitchCase="'rates'">
+    <div class="dataDiv" *ngSwitchCase="'rates'">
       <ion-card><p>rates</p></ion-card>
     </div>
-    <div *ngSwitchCase="'about'">
+    <div class="dataDiv" *ngSwitchCase="'about'">
         <ion-card><p>about</p></ion-card>
     </div>
   </div>

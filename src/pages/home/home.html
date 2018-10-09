@@ -28,7 +28,7 @@
         <ion-item >
             <ion-scroll scrollX="true" scroll-avatar>
               <ion-avatar>
-                <horizontal-item-slider *ngFor="let item of homeList.artees" avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
+                <horizontal-item-slider *ngFor="let item of homeList.artees" (click)="goToProfile(item.id)" avatarImg="{{item.img}}" avatarTitle="{{item.name}}"></horizontal-item-slider>
               </ion-avatar> 
             </ion-scroll>
         </ion-item>  

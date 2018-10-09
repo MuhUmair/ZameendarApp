@@ -10,7 +10,7 @@ export class ProfileServiceProvider
         console.log('Hello ProfileServiceProvider Provider');
         
     }
-    getProfileList()
+    getProfileList(id:any)
     {
         return new Promise(resolve => {
             const httpOptions = {
@@ -19,7 +19,7 @@ export class ProfileServiceProvider
                   'Authorization': 'my-auth-token'
                 })
               };
-              this.http.get('http://sarcasmnew.com/Arat/Artee/user/profile/16.json',httpOptions)
+              this.http.get('http://sarcasmnew.com/Arat/Artee/user/profile/'+id+'.json',httpOptions)
               .subscribe(data => {
                 resolve(data);
               }, (err) => {
