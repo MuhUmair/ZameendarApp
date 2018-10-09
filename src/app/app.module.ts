@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+import {GlobalVars} from '../globals/globalVar';
 
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
@@ -52,7 +54,8 @@ import { ProfileServiceProvider } from '../providers/profile-service/profile-ser
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-      ComponentsModule,
+    IonicStorageModule.forRoot(),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -78,8 +81,9 @@ import { ProfileServiceProvider } from '../providers/profile-service/profile-ser
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
     HomeServiceProvider,
-    DealerServiceProvider,
-    ProfileServiceProvider
+    ProfileServiceProvider,
+    GlobalVars,
+    DealerServiceProvider
   ]
 })
 export class AppModule {}

@@ -37,26 +37,26 @@
     <div class="back-image">
       <div><img class="edit_icon" src="../assets/icon/editicon.png"/></div>
       <div class="avatar-set"><img style="border-radius: 50%;" class="" src="assets/imgs/images.jpg"/></div>
-      <div>
-        <p class="main_title">Jimmy Brown</p>
-        <p class="sub_title">California, United States</p>
+      <div *ngIf='globalVars.loginState'>
+
+        <p class="main_title" *ngIf='globalVars.loginData.authUser'>{{globalVars.loginData.authUser.name}}</p>
+        <p class="sub_title" *ngIf='globalVars.loginData.authUser'>{{globalVars.loginData.authUser.address}}</p>
       </div>
     </div>
     <!-- <icon-list-item (click)="goToaddProduct()" iconClass="ios-mail-outline" iconClass="message" displayText="Add Product" badgeCount=""></icon-list-item> -->
     <icon-list-item (click)="goTohome()" iconClass="ios-mail-outline" displayText="Home Page" badgeCount=""></icon-list-item>
-    <icon-list-item  (click)="goToaddProduct()" iconClass="ios-mail-outline" displayText="Add Product" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTocommunication()" iconClass="ios-mail-outline" displayText="Communication" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goToaddProduct()" iconClass="ios-mail-outline" displayText="Add Product" badgeCount=""></icon-list-item>
     <icon-list-item (click)="goTodealerList()" iconClass="ios-mail-outline" displayText="Dealer List" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTofeeds()" iconClass="ios-mail-outline" displayText="Feeds" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTologin()" iconClass="ios-mail-outline" displayText="Login" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTosignUp()" iconClass="ios-mail-outline" displayText="Sign Up" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goToaddRates()" iconClass="ios-mail-outline" displayText="Add Rates" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goToprofile()" iconClass="ios-mail-outline" displayText="Profile" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTosearch()" iconClass="ios-mail-outline" displayText="Search" badgeCount=""></icon-list-item>
-    <icon-list-item (click)="goTochat()" iconClass="ios-mail-outline" displayText="Chat" badgeCount=""></icon-list-item>
-
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goTofeeds()" iconClass="ios-mail-outline" displayText="Feeds" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="globalVars.loginState" (click)="goTologin()" iconClass="ios-mail-outline" displayText="Login" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="globalVars.loginState" (click)="goTosignUp()" iconClass="ios-mail-outline" displayText="Sign Up" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goToaddRates()" iconClass="ios-mail-outline" displayText="Add Rates" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goToprofile()" iconClass="ios-mail-outline" displayText="Profile" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goTosearch()" iconClass="ios-mail-outline" displayText="Search" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goTochat()" iconClass="ios-mail-outline" displayText="Chat" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="goTocommunication()" iconClass="ios-mail-outline" displayText="Communication" badgeCount=""></icon-list-item>
+    <icon-list-item [hidden]="!globalVars.loginState" (click)="logout()" iconClass="ios-mail-outline" displayText="Logout" badgeCount=""></icon-list-item>
     
-
   </ion-content>
 
 </ion-menu>

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as Constants from '../constant/constants';
 import 'rxjs/add/operator/map';
 
 
@@ -19,7 +20,7 @@ export class HomeServiceProvider
                   'Authorization': 'my-auth-token'
                 })
               };
-              this.http.get('http://sarcasmnew.com/Arat/Artee/pages/home.json',httpOptions)
+              this.http.get(Constants.API_ENDPOINT + '/pages/home.json',httpOptions)
               .subscribe(data => {
                 resolve(data);
               }, (err) => {
