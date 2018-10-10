@@ -6,8 +6,9 @@
       <!-- <div *ngIf="profileList != null;then profileContent else other_profileContent"></div> -->
       <div style="overflow:  hidden;margin: 30px 0 9px 12px;" >
         <div style="float: left;width: 25%">
-            <img style="width: 70%; border-radius: 50px" src="{{baseURL + '/' + profileList.data.profileimages.url}}"
+            <img *ngIf="profileList.data.profileimages.length > 0" style="width: 70%; border-radius: 50px" src="{{baseURL + '/' + profileList.data.profileimages[0].url}}"
             onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+            <img class="thumbnail-image" style="width: 70%; border-radius: 50px" *ngIf="profileList.data.profileimages.length == 0" src="assets/imgs/no-image.jpg"/>
 
 
           <!-- <img style="width: 70%" src="assets/imgs/profile.png" /> -->
@@ -28,7 +29,7 @@
   <ion-toolbar class="segment-toolbar" no-border-top>
       <ion-segment class="segment-nav" [(ngModel)]="profileSegment">
         <ion-segment-button class="segment-btn" value="products">
-          <p>40</p>
+          <p *ngIf="profileList != null">{{profileList.data.products.length}}</p>
           Product
         </ion-segment-button>
         <ion-segment-button class="segment-btn" value="rates">
@@ -65,20 +66,20 @@
                             {{item.autofillproduct.pType}}
                         </p>
                         <p *ngIf="item.autofillproduct == null" class="dealer text">
-                            Type
+                            Ads
                         </p>
                   </div>
                   <br/>
-                  <p class="dealer text">Rates</p>
+                  <!-- <p class="dealer text">Rates</p> -->
               </div>
         </ion-item>
         
       </ion-card>
     </ng-template>
     </div>
-    <div class="dataDiv" *ngSwitchCase="'rates'">
+    <!-- <div class="dataDiv" *ngSwitchCase="'rates'">
       <ion-card><p>rates</p></ion-card>
-    </div>
+    </div> -->
     <div class="dataDiv" *ngSwitchCase="'about'">
         <ion-card><p>about</p></ion-card>
     </div>

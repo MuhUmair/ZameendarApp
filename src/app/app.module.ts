@@ -30,6 +30,8 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { DealerServiceProvider } from '../providers/dealer-service/dealer-service';
 import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
+import { FeedServiceProvider } from '../providers/feed-service/feed-service';
+
 
 
 
@@ -83,7 +85,8 @@ import { ProfileServiceProvider } from '../providers/profile-service/profile-ser
     HomeServiceProvider,
     ProfileServiceProvider,
     GlobalVars,
-    DealerServiceProvider
+    DealerServiceProvider,
+    FeedServiceProvider
   ]
 })
 export class AppModule {}
