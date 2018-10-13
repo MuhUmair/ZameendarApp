@@ -5,13 +5,13 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class HomeServiceProvider
+export class FeedServiceProvider
 {
     constructor(public http: HttpClient) {
         console.log('Hello HomeServiceProvider Provider');
         
     }
-    getHomeList()
+    getFeedList()
     {
         return new Promise(resolve => {
             const httpOptions = {
@@ -20,7 +20,7 @@ export class HomeServiceProvider
                   'Authorization': 'my-auth-token'
                 })
               };
-              this.http.get(Constants.API_ENDPOINT + '/pages/home.json',httpOptions)
+              this.http.get(Constants.API_ENDPOINT + '/Feed.json',httpOptions)
               .subscribe(data => {
                 resolve(data);
               }, (err) => {

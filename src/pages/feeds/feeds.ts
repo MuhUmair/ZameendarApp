@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ICFeedsWrapper } from './../../Interfaces/wrapper/IFeedsWrapper';
+import {FeedServiceProvider} from '../../providers/feed-service/feed-service';
+import { GlobalVars } from '../../globals/globalVar';
 
 /**
  * Generated class for the FeedsPage page.
@@ -15,8 +18,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedsPage {
   items: any;
+  feedList:ICFeedsWrapper;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public FeedServiceProvider: FeedServiceProvider, public globalVars: GlobalVars) {
+    this.loadFeedList();
     this.items = [
       {Name:'Sang Jan Su',Date:'01 - Apr',Time:'08:46 pm',
       Text:'There is no one who loves pain itself,who seeks after it and wants to have it, simply because it is pain..',
@@ -31,6 +36,15 @@ export class FeedsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedsPage');
+  }
+  loadFeedList(){
+    this.FeedServiceProvider.getFeedList()
+    .then((data:ICFeedsWrapper) => {
+      this.feedList = data;
+      console.log("Feeds Data",this.feedList);
+      // console.log(this.coldStorageList);
+      // console.log(this.tractorList);
+    }); 
   }
 
 }

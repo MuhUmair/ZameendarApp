@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+import {GlobalVars} from '../globals/globalVar';
 
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
@@ -26,6 +28,12 @@ import { DealerListPage } from '../pages/dealer-list/dealer-list';
 import { ChatPage } from '../pages/chat/chat';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
+import { DealerServiceProvider } from '../providers/dealer-service/dealer-service';
+import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
+import { FeedServiceProvider } from '../providers/feed-service/feed-service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +56,8 @@ import { HomeServiceProvider } from '../providers/home-service/home-service';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-      ComponentsModule,
+    IonicStorageModule.forRoot(),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -73,7 +82,11 @@ import { HomeServiceProvider } from '../providers/home-service/home-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
-    HomeServiceProvider
+    HomeServiceProvider,
+    ProfileServiceProvider,
+    GlobalVars,
+    DealerServiceProvider,
+    FeedServiceProvider
   ]
 })
 export class AppModule {}

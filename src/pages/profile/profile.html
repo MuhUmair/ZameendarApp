@@ -1,51 +1,90 @@
-<ion-header>
-  <ion-navbar>
-    <div style="overflow:  hidden;margin: 30px 0 9px 12px;">
-      <div style="float: left;width: 25%">
-        <img style="width: 70%" src="assets/imgs/profile.png" />
+
+<ion-header> 
+  <div *ngIf="profileList != null;then mainContent else other_mainContent">Not found</div> 
+  <ng-template #mainContent>
+    <ion-navbar>
+      <!-- <div *ngIf="profileList != null;then profileContent else other_profileContent"></div> -->
+      <div style="overflow:  hidden;margin: 30px 0 9px 12px;" >
+        <div style="float: left;width: 25%">
+            <img *ngIf="profileList.data.profileimages.length > 0" style="width: 70%; border-radius: 50px" src="{{baseURL + '/' + profileList.data.profileimages[0].url}}"
+            onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+            <img class="thumbnail-image" style="width: 70%; border-radius: 50px" *ngIf="profileList.data.profileimages.length == 0" src="assets/imgs/no-image.jpg"/>
+
+
+          <!-- <img style="width: 70%" src="assets/imgs/profile.png" /> -->
+        </div>
+        <div style="color: white;float: left;">
+          <h1 style="margin-bottom: 0">{{profileList.data.user.name}}</h1>
+          <p style="margin-top: 0;font-size: 12px;text-align:  center;">
+              <ion-icon name="pin"></ion-icon>
+              {{profileList.data.user.address}}</p>
+        </div>
       </div>
-      <div style="color: white;float: left;">
-        <h1 style="margin-bottom: 0">Bunny Brown</h1>
-        <p style="margin-top: 0;font-size: 12px;text-align:  center;">
-            <ion-icon name="pin"></ion-icon>
-          California, New Street</p>
-      </div>
-    </div>
-  </ion-navbar>
+      <!-- <div #other_profileContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></div> -->
+    </ion-navbar>
+  </ng-template>
+  <ng-template #other_mainContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></ng-template>
+
+
   <ion-toolbar class="segment-toolbar" no-border-top>
-    <ion-segment class="segment-nav" [(ngModel)]="profileSegment">
-      <ion-segment-button class="segment-btn" value="products">
-        <p>40</p>
-        Product
-      </ion-segment-button>
-      <ion-segment-button class="segment-btn" value="rates">
-        <p>507</p>
-        Rates
-      </ion-segment-button>
-      <ion-segment-button value="about">
-       <p class="p-head"><ion-icon name="pricetag"></ion-icon></p>
-        About
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+      <ion-segment class="segment-nav" [(ngModel)]="profileSegment">
+        <ion-segment-button class="segment-btn" value="products">
+          <p *ngIf="profileList != null">{{profileList.data.products.length}}</p>
+          Product
+        </ion-segment-button>
+        <ion-segment-button class="segment-btn" value="rates">
+          <p>507</p>
+          Rates
+        </ion-segment-button>
+        <ion-segment-button value="about">
+         <p class="p-head"><ion-icon name="pricetag"></ion-icon></p>
+          About
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-header-margin-profile" padding style="background: transparent">
-    <div [ngSwitch]="profileSegment">
-      <div *ngSwitchCase="'products'">
-        <ion-card id="card_margin" *ngFor="let item of items">
-            <dealer-list-item [item]="item"></dealer-list-item>
-        </ion-card>
-      </div>
-      <div *ngSwitchCase="'rates'">
-        <ion-card><p>rates</p></ion-card>
-      </div>
-      <div *ngSwitchCase="'about'">
-          <ion-card><p>about</p></ion-card>
-      </div>
+  <div [ngSwitch]="profileSegment">
+    <div class="dataDiv" *ngSwitchCase="'products'" >
+        <div *ngIf="profileList != null;then itemList">Not found</div> 
+      <ng-template #itemList>
+        <ion-card id="card_margin" *ngFor="let item of profileList.data.products">
+        <ion-item>
+          <ion-avatar item-start>
+            <img *ngIf="item.autofillproduct != null" class="thumbnail-image" src="{{baseURL + '/img/' + item.autofillproduct.email}}"
+                onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+            <img class="thumbnail-image" *ngIf="item.autofillproduct == null" src="assets/imgs/no-image.jpg"/>
+          </ion-avatar>
+              <div class="header-div">
+                  <p><b>{{item.name}}</b></p><br/>
+                  <p class="phone text">{{item.description}}</p>
+              </div>
+              <div class="header-div sub-div">
+                  <div>
+                        <p *ngIf="item.autofillproduct != null" class="dealer text">
+                            {{item.autofillproduct.pType}}
+                        </p>
+                        <p *ngIf="item.autofillproduct == null" class="dealer text">
+                            Ads
+                        </p>
+                  </div>
+                  <br/>
+                  <!-- <p class="dealer text">Rates</p> -->
+              </div>
+        </ion-item>
+        
+      </ion-card>
+    </ng-template>
     </div>
-  </ion-content>
-
+    <!-- <div class="dataDiv" *ngSwitchCase="'rates'">
+      <ion-card><p>rates</p></ion-card>
+    </div> -->
+    <div class="dataDiv" *ngSwitchCase="'about'">
+        <ion-card><p>about</p></ion-card>
+    </div>
+  </div>
+</ion-content>
 <!-- <ion-content padding style="background: transparent">
   <div [ngSwitch]="profile">
       <ion-card id="card_margin"  *ngSwitchCase="'products'" *ngFor="let item of items">

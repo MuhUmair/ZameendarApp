@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as Constants from '../constant/constants';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -25,5 +26,20 @@ export class UserServiceProvider {
         });
     });
   }
-
+  userLogin(body:any) {
+    return new Promise(resolve => {
+      this.http.post(Constants.API_ENDPOINT + '/user/jLogin.json',body)
+        .subscribe(data => {
+          resolve(data);
+        });
+    });
+  }
+  userLogout() {
+    return new Promise(resolve => {
+      this.http.get(Constants.API_ENDPOINT + '/user/jLogout.json')
+        .subscribe(data => {
+          resolve(data);
+        });
+    });
+  }
 }

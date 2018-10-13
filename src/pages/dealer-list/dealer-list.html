@@ -13,9 +13,11 @@
   </ion-navbar>
 </ion-header> -->
 <ion-content class="ion-header-margin" padding style="background: transparent">
-  <ion-card  id="card_margin" *ngFor="let item of items">
- <dealer-list-item [item]="item">
-
-</dealer-list-item>
-</ion-card>
-</ion-content>
+  <div *ngIf="items != null">
+    <ion-card  id="card_margin" *ngFor="let item of items.users">
+      <dealer-list-item [item]="item">
+     
+     </dealer-list-item>
+     </ion-card>     
+  </div>
+  </ion-content>

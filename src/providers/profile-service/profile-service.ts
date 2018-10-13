@@ -1,17 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as Constants from '../constant/constants';
 import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class HomeServiceProvider
+export class ProfileServiceProvider
 {
     constructor(public http: HttpClient) {
-        console.log('Hello HomeServiceProvider Provider');
+        console.log('Hello ProfileServiceProvider Provider');
         
     }
-    getHomeList()
+    getProfileList(id:any)
     {
         return new Promise(resolve => {
             const httpOptions = {
@@ -20,7 +19,7 @@ export class HomeServiceProvider
                   'Authorization': 'my-auth-token'
                 })
               };
-              this.http.get(Constants.API_ENDPOINT + '/pages/home.json',httpOptions)
+              this.http.get('http://sarcasmnew.com/Arat/Artee/user/profile/'+id+'.json',httpOptions)
               .subscribe(data => {
                 resolve(data);
               }, (err) => {

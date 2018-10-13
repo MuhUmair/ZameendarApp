@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input } from '@angular/core';
-
+import * as Constants  from '../../providers/constant/constants';
+import { GlobalVars } from '../../globals/globalVar';
 /**
  * Generated class for the DealerListItemComponent component.
  *
@@ -12,10 +13,14 @@ import { Component, ElementRef, Input } from '@angular/core';
 })
 export class DealerListItemComponent {
   @Input() 
-  item:{Name:string,Phone:string,Followers:number,ImagePath:string};
-  constructor(elem:ElementRef) {
-    console.log('Hello DetailListItemComponent Component');
-   this.item = elem.nativeElement.getAttribute('item');
+  item:any;
+  baseURL:string;
+  constructor(elem:ElementRef, public globalVars: GlobalVars) {
+    this.item = elem.nativeElement.getAttribute('item');
+    this.baseURL = this.globalVars.baseURL;
+    // console.log('this.item' + this.item);
+    // debugger
+   
   }
 
 }
