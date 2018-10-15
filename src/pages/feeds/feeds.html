@@ -2,10 +2,18 @@
 
 
 <ion-content *ngIf="feedList != null;" class="ion-header-margin" padding style="background: transparent">
-  
+  <ion-item style="width: 300px; float: left; margin-bottom: 10px">
+    <ion-avatar class="avatar-style" item-start>
+      <img style="border-radius: 50px" 
+      src="{{'assets/imgs/no-image.jpg'}}"/>
+      <!-- onError=;"  alt="..." /> -->
+      <!-- <img style="border-radius: 50px"  -->
+      <!-- *ngIf="item.pImg.length == 0" src="assets/imgs/no-image.jpg"/> -->
+    </ion-avatar>
   <ion-input class="feedInput" type="text" placeholder="What is in your mind"></ion-input>
-  <button ion-button class="UploadButtonStyle">Upload</button>
-    
+</ion-item>
+<button ion-button class="UploadButtonStyle"><ion-icon name="cloud-upload" class="md-cloud-upload set-size"></ion-icon></button>
+
   <!-- <input style="width: 83%;border-radius: 4px;" type="text"[(ngModel)]="content" class="form-control" id="inputDefault" name="content" placeholder="What is in your mind"> -->
     
     <input type="hidden" name="title" value="">

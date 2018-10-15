@@ -21,16 +21,23 @@ page-feeds {
     }
     .text-input-md
     {
-    padding: 4px 0px 3px 10px !important;
+    padding: 0px 0px 0px 10px !important;
     font-size: 15px;
     }
     .UploadButtonStyle
     {
-        padding: 27px 15px 25px 15px;
-        font-size: 20px !important;
+        padding: 15px 11px 17px 13px;
+        font-size: 10px !important;
         background-color: #74afff;
         border-radius: 5px;
         color: white;
-        margin: 0px 0px 0px 5px;
+        margin: 3px 0px 0px 5px;
+    }
+    .set-size
+    {
+        font-size: 22px !important;
+    }
+    .avatar-style{
+        margin: 0px !important;
     }
 }
