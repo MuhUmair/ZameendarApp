@@ -29,16 +29,16 @@
   <ion-toolbar class="segment-toolbar" no-border-top>
       <ion-segment class="segment-nav" [(ngModel)]="profileSegment">
         <ion-segment-button class="segment-btn" value="products">
-          <p *ngIf="profileList != null">{{profileList.data.products.length}}</p>
-          Product
+          <p class="p-icon-color" *ngIf="profileList != null">{{profileList.data.products.length}}</p>
+          <p class="p-icon-color" style="margin:0px">Product</p>
         </ion-segment-button>
         <ion-segment-button class="segment-btn" value="rates">
-          <p>507</p>
-          Rates
+          <p class="p-icon-color" >507</p>
+          <p class="p-icon-color" style="margin:0px">Rates</p>
         </ion-segment-button>
         <ion-segment-button value="about">
-         <p class="p-head"><ion-icon name="pricetag"></ion-icon></p>
-          About
+         <p class="p-head p-icon-color"><ion-icon name="pricetag"></ion-icon></p>
+          <p class="p-icon-color" style="margin:0px">About</p>
         </ion-segment-button>
       </ion-segment>
     </ion-toolbar>
