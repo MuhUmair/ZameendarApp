@@ -1,60 +1,50 @@
   [
     {
-        "id":1,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":2,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":3,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":4,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":5,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":6,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":7,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":8,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     { 
-        "id":9,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"
     },
     {
-        "id":10,
         "img": "peas.png",
         "name": "Peas",
         "type": "Vagetable"

@@ -21,8 +21,7 @@ export class DetailHeaderComponent {
     Comment:number,
     Follow:number,
     Type:string,
-    multiitem:[{Name:string,Phone:string,Followers:number,ImagePath:string}],
-    baseURL:string
+    multiitem:[{Name:string,Phone:string,Followers:number,ImagePath:string}]
   }
   constructor(elem:ElementRef) {
    this.item = elem.nativeElement.getAttribute('item');

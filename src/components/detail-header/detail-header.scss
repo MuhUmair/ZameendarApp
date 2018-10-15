@@ -11,8 +11,6 @@ detail-header {
 .date-time
 {
     font-size: 9px;
-    float: left;
-    margin-right: 4px;
 }
 .text
 {
@@ -31,13 +29,9 @@ detail-header {
     {
         font-size: 12px;
     }
-    .rates
+    .dealer
     {
-        float: left;
-    }
-    .content
-    {
-        float: right;
+        text-align: right;
     }
     .text
     {

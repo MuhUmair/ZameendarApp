@@ -1,62 +1,39 @@
-<div *ngIf="item.attachedFeeds[0].other1 == null">
 <ion-item>
     <ion-avatar item-start>
-            <img *ngIf="item.pImg.length > 0" style="border-radius: 50px" 
-            src="{{'http://sarcasmnew.com/Arat/Artee/' + item.pImg[0].url}}"
-            onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
-            <img style="border-radius: 50px" 
-            *ngIf="item.pImg.length == 0" src="assets/imgs/no-image.jpg"/>
+      <img src="assets/imgs/profile.png">
     </ion-avatar>
         <div class="header-div">
             <p><b>{{item.user.name}}</b></p>
-            <p class="date-time">{{item.date |  date:'dd - MMM'}} at {{item.date | date:'shortTime'}}</p>
+            <p class="date-time">{{item.date}}</p>
         </div>
         <div *ngIf="item.other1 != null">
             <div class="header-div sub-div">
                 <p><b>{{item.other1}} - {{item.other2}} Rs</b></p>
             </div>
         </div>
+
 </ion-item>
 <ion-card-content>
-    <p>{{item.content}}</p>
-  </ion-card-content>
-</div>
-
-<div *ngIf="item.attachedFeeds[0].other1 != null">
-    <ion-item>
-        <ion-avatar item-start>
-                <img *ngIf="item.pImg.length > 0" style="border-radius: 50px" 
-                src="{{'http://sarcasmnew.com/Arat/Artee/' + item.pImg[0].url}}"
-                onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
-                <img style="border-radius: 50px" 
-                *ngIf="item.pImg.length == 0" src="assets/imgs/no-image.jpg"/>
-        </ion-avatar>
-            <div class="header-div">
-                <p><b>{{item.user.name}}</b></p>
-            <p class="date-time">{{item.date |  date:'dd - MMM'}} at {{item.date | date:'shortTime'}}</p>
-            </div>
-    </ion-item>
-    
-    <div *ngFor="let obj of item.attachedFeeds;let rowIndex = index">
+  <p>{{item.content}}</p>
+</ion-card-content>
+<p>{{item.autofillproduct[0]}}</p>
+<!-- <div *ngIf="item.autofillproduct != null">
+    <div *ngFor="let obj of item.autofillproduct">
         <ion-item>
-            <ion-avatar item-start style="width: 40px;">
-            <img *ngIf="item.autofillproduct != null" style="border-radius: 50px" 
-            src="{{'http://sarcasmnew.com/Arat/Artee/img/' + item.autofillproduct.email}}"
-            onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
-            <img style="border-radius: 50px" 
-            *ngIf="item.autofillproduct == null" src="assets/imgs/no-image.jpg"/>
+            <ion-avatar item-start>
+            <img class="img" src="{{obj.ImagePath}}">
             </ion-avatar>
-                <div>
-                    <p><b>{{obj.title}}</b></p><br/>
+                <div class="header-div">
+                    <p><b>{{obj.name}}</b></p><br/>
                     <p class="phone text">{{obj.about}}</p>
                 </div>
-                <div>
-                    <p class="rates text"><b>{{item.other1}} - {{item.other2}} Rs</b></p>
-                    <p class="text content">{{obj.content}}</p>
+                <div class="header-div sub-div">
+                    <p class="dealer text">{{obj.pType}}</p><br/>
+                    <p class="dealer text">{{obj.Followers}}</p>
                 </div>
         </ion-item>
     </div>
-</div>
+</div> -->
 <div *ngIf="item.Type == 'feed'">
     <img src="assets/imgs/main.png">
 </div>
