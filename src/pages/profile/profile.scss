@@ -64,7 +64,10 @@ ion-segment-button {
       margin-top: 0 !important;
       margin-bottom: 1px !important;
   }
-
+  .p-icon-color
+  {
+    color: white !important;
+  }
 
   .header-div
         {
@@ -96,11 +99,3 @@ ion-segment-button {
             margin: 5px 0 5px 0px;
         }
 }
-// ion-header
-// {
-//   visibility: hidden !important;
-// }
-// ion-footer
-// {
-//   visibility: visible !important;
-// }
