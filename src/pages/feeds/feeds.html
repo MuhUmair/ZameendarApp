@@ -1,20 +1,32 @@
 <ion-content *ngIf="feedList != null;" class="ion-header-margin" padding style="background: transparent">
-    <ion-card  id="card_margin" *ngFor="let item of feedList.feed">
+    <input style="width: 83%;border-radius: 4px;" type="text"[(ngModel)]="content" class="form-control" id="inputDefault" name="content" placeholder="What is in your mind">
+    <input type="hidden" name="title" value="">
+    <input type="hidden" name="productID" value="-1">
+    <input type="hidden" name="autoID" value="-1"> 
+    <input (click)="saveStatus()" type="button" value="Update" class="btn btn-primary" data-loading-text="Loading...">
+  <ion-card  id="card_margin" *ngFor="let item of feedList.feed">
  
 <detail-header  [item]="item">
 
 </detail-header>
         <ion-row>
           <ion-col>
-            <button class="btn" ion-button color="light">
-              {{item.Comment}} Comments
-            </button>
+              <button *ngIf="item.comments.length > 1" class="btn" ion-button color="light">
+                  {{item.comments.length}} Comments
+                </button>
+                <button *ngIf="item.comments.length == 0 ||item.comments.length == 1" class="btn" ion-button color="light">
+                    {{item.comments.length}} Comment
+                  </button>
           </ion-col>
           <ion-col>
-            <button class="btn follow-btn" ion-button icon-start color="light">
-              <ion-icon class="follow-icon" name="heart"></ion-icon>
-              {{item.Follow}} Follow
-            </button>
+              <button *ngIf="item.likeCount > 0" class="btn follow-btn" ion-button icon-start color="light">
+                  <ion-icon class="follow-icon" name="md-thumbs-up"></ion-icon>
+                  Liked {{item.likeCount}} 
+                </button>
+                <button *ngIf="item.likeCount == 0" class="btn follow-btn" ion-button icon-start color="light">
+                    <ion-icon class="follow-icon" name="md-thumbs-up"></ion-icon>
+                    Like {{item.likeCount}} 
+                  </button>
           </ion-col>
         </ion-row>
       </ion-card>
