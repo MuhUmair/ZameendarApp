@@ -1,14 +1,36 @@
 page-feeds {
-.btn
-{
-    font-size: 12px;font-weight: 300;text-transform: capitalize;
-}
-.follow-btn
-{
-    float:right;
-}
-.follow-icon
-{
-    color: orange;font-size: 14px;
-}
+    .btn
+    {
+        font-size: 12px;font-weight: 300;text-transform: capitalize;
+    }
+    .follow-btn
+    {
+        float:right;
+    }
+    .follow-icon
+    {
+        color: orange;font-size: 14px;
+    }
+    .feedInput
+    {
+        border: solid 1px #e1e1e1;
+        border-radius: 5px;
+        width: 65%;
+        float: left;
+        margin-left: 2%;
+    }
+    .text-input-md
+    {
+    padding: 4px 0px 3px 10px !important;
+    font-size: 15px;
+    }
+    .UploadButtonStyle
+    {
+        padding: 27px 15px 25px 15px;
+        font-size: 20px !important;
+        background-color: #74afff;
+        border-radius: 5px;
+        color: white;
+        margin: 0px 0px 0px 5px;
+    }
 }
