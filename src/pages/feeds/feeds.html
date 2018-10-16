@@ -10,9 +10,9 @@
       <!-- <img style="border-radius: 50px"  -->
       <!-- *ngIf="item.pImg.length == 0" src="assets/imgs/no-image.jpg"/> -->
     </ion-avatar>
-  <ion-input class="feedInput" type="text" placeholder="What is in your mind"></ion-input>
+  <ion-input class="feedInput" type="text" [(ngModel)]="content" id="inputDefault" name="content" placeholder="What is in your mind"></ion-input>
 </ion-item>
-<button ion-button class="UploadButtonStyle"><ion-icon name="cloud-upload" class="md-cloud-upload set-size"></ion-icon></button>
+<button ion-button (click)="saveStatus()" class="UploadButtonStyle"><ion-icon name="cloud-upload" class="md-cloud-upload set-size"></ion-icon></button>
 
   <!-- <input style="width: 83%;border-radius: 4px;" type="text"[(ngModel)]="content" class="form-control" id="inputDefault" name="content" placeholder="What is in your mind"> -->
     
