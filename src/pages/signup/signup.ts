@@ -16,6 +16,9 @@ import { SignUpServiceProvider } from './../../providers/signup-service/signup-s
 })
 export class SignupPage {
   type:any;zName:string;zPassword:string;zMobile:string;
+  dName:string;dEmail:string;dPassword:string;dPhone:string;dMobile:string;dAddress:string;dCity:string;dCategory:string;dMarket:string;dDescription:string;
+  tName:string;tEmail:string;tPassword:string;tPhone:string;tMobile:string;tAddress:string;tCity:string;tCategory:string;tDescription:string;
+  cName:string;cEmail:string;cPassword:string;cPhone:string;cMobile:string;cAddress:string;cCity:string;cCategory:string;cCapacity:string;cDescription:string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public SignUpServiceProvider: SignUpServiceProvider) {
   }
 
@@ -24,11 +27,37 @@ export class SignupPage {
   }
   Register()
   {
+    if(this.type == 5){
     this.SignUpServiceProvider.userRegister({name:this.zName,password:this.zPassword,mobile:this.zMobile},this.type)
     .then((data) =>{
       console.log(data)
     })
-      console.log("Type: " + this.type + " | zName: "+ this.zName + " | zPassword: "+this.zPassword+" | zMobile: "+this.zMobile)
+  }
+  else if(this.type == 4){
+    debugger
+    this.SignUpServiceProvider.userRegister({name:this.dName,email:this.dEmail,password:this.dPassword
+    ,phone:this.dPhone,mobile:this.dMobile,address:this.dAddress,city:this.dCity,category:this.dCategory
+    ,mType:this.dMarket,description:this.dDescription},this.type)
+    .then((data) =>{
+      console.log(data)
+    })
+  }
+  else if(this.type == 3){
+    this.SignUpServiceProvider.userRegister({name:this.cName,email:this.cEmail,password:this.cPassword
+    ,phone:this.cPhone,mobile:this.cMobile,address:this.cAddress,city:this.cCity,category:this.cCategory
+    ,capacity:this.cCapacity,description:this.cDescription},this.type)
+    .then((data) =>{
+      console.log(data)
+    })
+  }
+  else if(this.type == 2){
+    this.SignUpServiceProvider.userRegister({name:this.tName,email:this.tEmail,password:this.tPassword
+    ,phone:this.tPhone,mobile:this.tMobile,address:this.tAddress,city:this.tCity,category:this.tCategory
+    ,description:this.tDescription},this.type)
+    .then((data) =>{
+      console.log(data)
+    })
+  }   
   }
   changeType($event)
   {
