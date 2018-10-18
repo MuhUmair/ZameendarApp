@@ -9,6 +9,7 @@
     <ion-card-content>
       <!-- <input-label></input-label>
       <input-field InputPlaceholder="User Type"></input-field> -->
+<form [formGroup]="signUpForm">
       <ion-item style="padding: 0">
         <ion-select (ionChange)="changeType($event)" placeholder="(Select)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
           <ion-option value="2">Tractor</ion-option>
@@ -23,13 +24,13 @@
       <input-label></input-label>
       <input-field [(ngModel)]="tEmail" InputPlaceholder="Email"></input-field>
       <input-label></input-label>
-      <input-field [(ngModel)]="tPassword" InputPlaceholder="Password"></input-field>
+      <input-field formControlName="tPassword" [(ngModel)]="tPassword" InputPlaceholder="Password"></input-field>
       <input-label></input-label>
-      <input-field InputPlaceholder="Confirm Password"></input-field>
+      <input-field formControlName="tconfirmPassword" InputPlaceholder="Confirm Password"></input-field>
       <input-label></input-label>
       <input-field [(ngModel)]="tPhone" InputPlaceholder="Phone #"></input-field>
       <input-label></input-label>
-      <input-field [(ngModel)]="tMobile" InputPlaceholder="Mobile #"></input-field>
+      <input-field formControlName="tMobile" [(ngModel)]="tMobile" InputPlaceholder="Mobile #"></input-field>
       <input-label></input-label>
       <input-field [(ngModel)]="tAddress" InputPlaceholder="Address"></input-field>
       <input-label></input-label>
@@ -95,6 +96,7 @@
       <input-label></input-label>
       <input-field [(ngModel)]="dCity" InputPlaceholder="City"></input-field>
       <input-label></input-label>
+      <ion-item style="padding: 0">
       <ion-select [(ngModel)]="dCategory" placeholder="(Category)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
         <ion-option value="1">All</ion-option>
         <ion-option value="2">Fruit</ion-option>
@@ -102,11 +104,14 @@
         <ion-option value="4">Vegitable</ion-option>
         <ion-option value="5">Others</ion-option>
       </ion-select>
+    </ion-item>
       <input-label></input-label>
+      <ion-item style="padding: 0">
       <ion-select [(ngModel)]="dMarket" placeholder="(Market Type)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
         <ion-option value="Type_1">Type 1</ion-option>
         <ion-option value="Type_2">Type 2</ion-option>
       </ion-select>
+    </ion-item>
       <input-label></input-label>
       <textarea [(ngModel)]="dDescription" style="width: 100%"></textarea>
     </div>
@@ -122,6 +127,7 @@
     </div>
      
       <z-button (click)="Register()" btnText="Sign Up" buttonStyle="SignupButton"></z-button>
+    </form>
     </ion-card-content>
 
 </ion-content>
