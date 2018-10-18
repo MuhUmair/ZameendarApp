@@ -64,37 +64,11 @@ export class SignupPage {
   
   Register()
   {
-    if(this.type == 5){
     this.SignUpServiceProvider.userRegister({name:this.zName,password:this.zPassword,mobile:this.zMobile},this.type)
     .then((data) =>{
       console.log(data)
     })
-  }
-  else if(this.type == 4){
-    debugger
-    this.SignUpServiceProvider.userRegister({name:this.dName,email:this.dEmail,password:this.dPassword
-    ,phone:this.dPhone,mobile:this.dMobile,address:this.dAddress,city:this.dCity,category:this.dCategory
-    ,mType:this.dMarket,description:this.dDescription},this.type)
-    .then((data) =>{
-      console.log(data)
-    })
-  }
-  else if(this.type == 3){
-    this.SignUpServiceProvider.userRegister({name:this.cName,email:this.cEmail,password:this.cPassword
-    ,phone:this.cPhone,mobile:this.cMobile,address:this.cAddress,city:this.cCity,category:this.cCategory
-    ,capacity:this.cCapacity,description:this.cDescription},this.type)
-    .then((data) =>{
-      console.log(data)
-    })
-  }
-  else if(this.type == 2){
-    this.SignUpServiceProvider.userRegister({name:this.tName,email:this.tEmail,password:this.tPassword
-    ,phone:this.tPhone,mobile:this.tMobile,address:this.tAddress,city:this.tCity,category:this.tCategory
-    ,description:this.tDescription},this.type)
-    .then((data) =>{
-      console.log(data)
-    })
-  }   
+      console.log("Type: " + this.type + " | zName: "+ this.zName + " | zPassword: "+this.zPassword+" | zMobile: "+this.zMobile)
   }
   changeType($event)
   {
