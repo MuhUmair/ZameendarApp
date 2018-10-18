@@ -14,7 +14,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { ComponentsModule} from "../components/components.module";
 import { AndroidFullScreen } from '@ionic-native/android-full-screen';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 // Navigation
 import { FeedsPage } from "../pages/feeds/feeds"
@@ -60,10 +59,6 @@ import { FeedServiceProvider } from '../providers/feed-service/feed-service';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     ComponentsModule,
-    Validators,
-    FormBuilder, 
-    FormGroup, 
-    FormControl,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
