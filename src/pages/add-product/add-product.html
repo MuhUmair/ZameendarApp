@@ -20,76 +20,26 @@
   <p class="text_align">Creat new product</p>
   <ion-card id="card_margin">
     <ion-card-content>
-
-      <!-- <input-label InputLabel="Product Type"></input-label>
-      <input-label InputLabel="Product Name"></input-label> -->
-      
-
-      <ion-label class="SearchInputLabel">Product Type</ion-label>
+     <ion-label class="SearchInputLabel">Product Type</ion-label>
       <ion-item>
-        <ion-select placeholder="(ALL)" interface="popover">
-          <ion-option value="nes">NES</ion-option>
-          <ion-option value="n64">Nintendo64</ion-option>
-          <ion-option value="ps">PlayStation</ion-option>
-          <ion-option value="genesis">Sega Genesis</ion-option>
-          <ion-option value="saturn">Sega Saturn</ion-option>
-          <ion-option value="snes">SNES</ion-option>
+        <ion-select style="width: 100%" [(ngModel)]="autoProductType" placeholder="All Types" interface="popover">  
+          <ion-option value="All">All Types</ion-option>
+          <ion-option value="Vegetable">Vegetable</ion-option>
+          <ion-option value="Fruit">Fruit</ion-option>
+          <ion-option value="Grains">Grains</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-label class="SearchInputLabel">Product Name</ion-label>
       <input id="ms" class="form-control magicsuggest" name="name1"/>
 
-      <!-- <div class="col-md-12 form-group">
-							 
-        <input type="hidden" name="name" placeholder="Product Name" class="form-control" value="" id="pname">
-        <input type="hidden" name="autoID" value="" id="autoID">
-        <div class="col-md-12 form-group">		 
-          <input type="hidden" name="name" placeholder="Product Name" class="form-control" value="Peas / مٹر " id="pname">
-          <input type="hidden" name="autoID" value="1" id="autoID">
-          <div class="ms-ctn form-control ms-ctn-focus" style="">
-            <span class="ms-helper " style="display: none;">You cannot choose more than 1 item</span>
-            <div class="ms-sel-ctn">
-              <input type="text" class="" placeholder="" style="width: 470px;">
-              <div style="display: none;"></div>
-            </div>
-            <div class="ms-trigger">
-              <div class="ms-trigger-ico"></div>
-            </div>
-
-            <div class="ms-res-ctn dropdown-menu" style="height: 302px; display: block;">
-              <div class="ms-res-item" data-json="{"id":1,"picture":"assets/imgs/peas.png","name":"Peas / مٹر ","email":"assets/imgs/peas.png","about":"peas","uName":"مٹر ","pType":"Vegetable","uType":null }">
-                <div style="padding: 5px; overflow:hidden;">
-                  <div style="float: left;">
-                    <img src="assets/imgs/peas.png" width="35">
-                  </div>
-                  <div style="float: left; margin-left: 5px;margin-top: 0px;">
-                    <div style="font-weight: bold; color: #333; font-size: 14px; line-height: 11px">Peas / مٹر </div>
-                    <small style="margin-bottom: 5px;">Vegetable</small>
-                  </div>
-                </div> 
-              </div>
-              <div style="clear:both;"></div>
-            </div>
-          </div>            
-      </div>
-                    
-    </div> -->
-      <!-- <div class="drop-down">    
-        <select name="options">     
-        <option class="en" value="en" 
-        style="background-image:url('assets/imgs/peas.png');">English</option>        
-        <option class="fr" value="fr"
-        style="background-image:url('assets/imgs/peas.png');">French</option>    
-        <option class="nl" value="nl"
-        style="background-image:url('assets/imgs/peas.png');">Nederlands</option>    
-        </select>     
-        </div>  -->
+      <input type="hidden" id="pname"/>
+      <input type="hidden" id="autoID"/>
       <input-label InputLabel="Description"></input-label>
-      <input-field InputPlaceholder="Add description"></input-field>
+      <input-field [(ngModel)]="description" InputPlaceholder="Add description"></input-field>
 
 
-      <z-button btnText="Add" buttonStyle="SearchButtonStyle"></z-button>
+      <z-button (click)="addProduct()" btnText="Add" buttonStyle="SearchButtonStyle"></z-button>
       <z-button (click)="goToaddRate()" btnText="Add Rates" buttonStyle="SearchButtonStyle"></z-button>
     
     </ion-card-content>
