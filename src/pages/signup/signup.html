@@ -7,18 +7,125 @@
 <ion-content padding style="background: transparent">
   <p class="text_align" style="font-size: 27px">Sign Up</p>
     <ion-card-content>
+      <!-- <input-label></input-label>
+      <input-field InputPlaceholder="User Type"></input-field> -->
+      <ion-item style="padding: 0">
+        <ion-select (ionChange)="changeType($event)" placeholder="(Select)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
+          <ion-option value="2">Tractor</ion-option>
+          <ion-option value="3">Cold Storage</ion-option>
+          <ion-option value="4">Dealer</ion-option>
+          <ion-option value="5">Zameendar</ion-option>
+        </ion-select>
+      </ion-item>
+      <div id="tractor">
       <input-label></input-label>
-      <input-field InputPlaceholder="User Type"></input-field>
+      <input-field [(ngModel)]="tName" InputPlaceholder="Name of your Showroom"></input-field>
       <input-label></input-label>
-      <input-field InputPlaceholder="Phone Number"></input-field>
+      <input-field [(ngModel)]="tEmail" InputPlaceholder="Email"></input-field>
       <input-label></input-label>
-      <input-field InputPlaceholder="Email"></input-field>
+      <input-field [(ngModel)]="tPassword" InputPlaceholder="Password"></input-field>
       <input-label></input-label>
-      <input-field InputPlaceholder="Password"></input-field>
-
-
+      <input-field InputPlaceholder="Confirm Password"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="tPhone" InputPlaceholder="Phone #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="tMobile" InputPlaceholder="Mobile #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="tAddress" InputPlaceholder="Address"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="tCity" InputPlaceholder="City"></input-field>
+      <input-label></input-label>
+      <ion-item style="padding: 0">
+      <ion-select [(ngModel)]="tCategory" placeholder="(Category)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
+        <ion-option value="1">All</ion-option>
+        <ion-option value="2">Massey Ferguson</ion-option>
+        <ion-option value="3">Fiat</ion-option>
+        <ion-option value="4">Russian</ion-option>
+      </ion-select>
+    </ion-item>
+      <input-label></input-label>
+      <textarea [(ngModel)]="tDescription" style="width: 100%"></textarea>
+    </div>
+    <div style="display: none;" id="coldStorage">
+      <input-label></input-label>
+      <input-field [(ngModel)]="cName" InputPlaceholder="Name of your Cold Storage"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cEmail" InputPlaceholder="Email"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cPassword" InputPlaceholder="Password"></input-field>
+      <input-label></input-label>
+      <input-field InputPlaceholder="Confirm Password"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cPhone" InputPlaceholder="Phone #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cMobile" InputPlaceholder="Mobile #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cAddress" InputPlaceholder="Address"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cCity" InputPlaceholder="City"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="cCapacity" InputPlaceholder="Capacity"></input-field>
+      <input-label></input-label>
+      <ion-item style="padding: 0">
+      <ion-select [(ngModel)]="cCategory" placeholder="(Category)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
+        <ion-option value="1">All</ion-option>
+        <ion-option value="2">Fruit</ion-option>
+        <ion-option value="4">Vegitable</ion-option>
+        <ion-option value="5">Others</ion-option>
+      </ion-select>
+    </ion-item>
+      <input-label></input-label>
+      <textarea [(ngModel)]="cDescription" style="width: 100%"></textarea>
+    </div>
+    <div style="display: none;" id="dealer">
+      <input-label></input-label>
+      <input-field [(ngModel)]="dName" InputPlaceholder="Name"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dEmail" InputPlaceholder="Email"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dPassword" InputPlaceholder="Password"></input-field>
+      <input-label></input-label>
+      <input-field InputPlaceholder="Confirm Password"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dPhone" InputPlaceholder="Phone #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dMobile" InputPlaceholder="Mobile #"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dAddress" InputPlaceholder="Address"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="dCity" InputPlaceholder="City"></input-field>
+      <input-label></input-label>
+      <ion-item style="padding: 0">
+      <ion-select [(ngModel)]="dCategory" placeholder="(Category)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
+        <ion-option value="1">All</ion-option>
+        <ion-option value="2">Fruit</ion-option>
+        <ion-option value="3">Grain</ion-option>
+        <ion-option value="4">Vegitable</ion-option>
+        <ion-option value="5">Others</ion-option>
+      </ion-select>
+    </ion-item>
+      <input-label></input-label>
+      <ion-item style="padding: 0">
+      <ion-select [(ngModel)]="dMarket" placeholder="(Market Type)" interface="popover" style="width: 100%;max-width: 100%;border: 1px solid #cccccc">
+        <ion-option value="Type_1">Type 1</ion-option>
+        <ion-option value="Type_2">Type 2</ion-option>
+      </ion-select>
+    </ion-item>
+      <input-label></input-label>
+      <textarea [(ngModel)]="dDescription" style="width: 100%"></textarea>
+    </div>
+    <div style="display: none;" id="zameendar">
+      <input-label></input-label>
+      <input-field [(ngModel)]="zName" InputPlaceholder="Name"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="zPassword" InputPlaceholder="Password"></input-field>
+      <input-label></input-label>
+      <input-field InputPlaceholder="Confirm Password"></input-field>
+      <input-label></input-label>
+      <input-field [(ngModel)]="zMobile" InputPlaceholder="Mobile #"></input-field>
+    </div>
      
-      <z-button btnText="Sign Up" buttonStyle="SignupButton"></z-button>
+      <z-button (click)="Register()" btnText="Sign Up" buttonStyle="SignupButton"></z-button>
     </ion-card-content>
 
 </ion-content>

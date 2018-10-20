@@ -38,7 +38,6 @@
       <div><img class="edit_icon" src="../assets/icon/editicon.png"/></div>
       <div class="avatar-set"><img style="border-radius: 50%;" class="" src="assets/imgs/images.jpg"/></div>
       <div *ngIf='globalVars.loginState'>
-
         <p class="main_title" *ngIf='globalVars.loginData.authUser'>{{globalVars.loginData.authUser.name}}</p>
         <p class="sub_title" *ngIf='globalVars.loginData.authUser'>{{globalVars.loginData.authUser.address}}</p>
       </div>
@@ -61,29 +60,45 @@
 
 </ion-menu>
 <ion-nav class="my-scroll-content" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
- <ion-footer>
-        <ion-toolbar class="segment-toolbar" no-border-top>
-            <ion-segment class="segment-nav">
-              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
-                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
-                Profile
-              </ion-segment-button>
-              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
-                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
-                Profile
-              </ion-segment-button>
-              <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
-                <p class="p-head"><ion-icon name="person" class="icon icon-md ion-md-person set-size"></ion-icon></p>
-                Profile
-              </ion-segment-button>
-              <ion-segment-button (click)="goTohome()" class="segment-btn Sizeoffont" value="rates">
-                <p class="p-head"><ion-icon name="home" class="md-home set-size"></ion-icon></p>
-                Home
-              </ion-segment-button>
-              <ion-segment-button value="about" class="segment-btn Sizeoffont">
-                <p class="p-head"><ion-icon name="pricetag" class="set-size"></ion-icon></p>
-                About
-              </ion-segment-button>
-            </ion-segment>
-          </ion-toolbar>
-  </ion-footer>
+<ion-footer>
+  <ion-toolbar class="segment-toolbar" no-border-top>
+    <ion-segment class="segment-nav">
+      
+      <ion-segment-button (click)="goTofeeds()" value="rate" class="segment-btn Sizeoffont">
+        <p class="p-head p-icon-color"><ion-icon name="person" class="set-size"></ion-icon></p>
+        <p class="p-head p-icon-color">Blog</p>
+      </ion-segment-button>
+<!-- 
+      <ion-segment-button class="segment-btn Sizeoffont" value="products">
+        <p class="p-head p-icon-color"><ion-icon name="person" class="md-person set-size"></ion-icon></p>
+      <p class="p-head p-icon-color">Profile</p>
+      </ion-segment-button> -->
+      
+      <ion-segment-button (click)="goTochat()" value="chat" class="segment-btn Sizeoffont">
+        <p class="p-head p-icon-color"><ion-icon name="chatboxes" class="md-chatboxes set-size"></ion-icon></p>
+        <p class="p-head p-icon-color">Profile</p>
+      </ion-segment-button>
+      
+      <!-- <ion-segment-button (click)="goTochat()" class="segment-btn Sizeoffont" value="products">
+        <p class="p-head p-icon-color"><ion-icon name="chatboxes" class="md-chatboxes set-size"></ion-icon></p>
+        <p class="p-head p-icon-color">Chat</p>
+      </ion-segment-button>
+       -->
+      <ion-segment-button (click)="goToprofile()" class="segment-btn Sizeoffont" value="products">
+        <p class="p-head p-icon-color"><ion-icon name="person" class="md-person set-size"></ion-icon></p>
+        <p class="p-head p-icon-color">Profile</p>  
+      </ion-segment-button>
+
+      <ion-segment-button (click)="goTohome()" class="segment-btn Sizeoffont" value="rates">
+        <p class="p-head p-icon-color"><ion-icon name="home" class="md-home set-size"></ion-icon></p>
+      <p class="p-head p-icon-color">Home</p>
+      </ion-segment-button>
+
+      <ion-segment-button (click)="goTofeeds()" value="about" class="segment-btn Sizeoffont">
+        <p class="p-head p-icon-color"><ion-icon name="pricetag" class="set-size"></ion-icon></p>
+      <p class="p-head p-icon-color">Feeds</p>
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

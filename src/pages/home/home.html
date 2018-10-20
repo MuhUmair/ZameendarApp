@@ -13,9 +13,9 @@
     <!--<ion-title color="blacks" >HOME</ion-title>-->
       <h2 class="titleUnderslider">Zameendar</h2>
   </ion-toolbar>
-  <ion-toolbar>
+  <ion-toolbar [hidden]="globalVars.loginState">
     <!--<ion-title color="blacks" >HOME</ion-title>-->
-    <z-button (click)="goTologin()" style="float: left; margin-left: 8%" ty btnText="LOGIN" buttonStyle="LoginSignupButtonStyle"></z-button>
+    <z-button  (click)="goTologin()" style="float: left; margin-left: 8%" ty btnText="LOGIN" buttonStyle="LoginSignupButtonStyle"></z-button>
     <z-button (click)="goTosigUp()" style="float: right; margin-right: 8%" btnText="SIGN UP" buttonStyle="LoginSignupButtonStyle"></z-button>
   </ion-toolbar>
   <div *ngIf="homeList != null;then mainContent else other_mainContent">Not found</div>    

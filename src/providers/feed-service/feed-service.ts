@@ -28,4 +28,15 @@ export class FeedServiceProvider
                 });
           });
     }
+
+    saveStatus(body:any)
+    {
+        debugger
+        return new Promise(resolve => {
+            this.http.post(Constants.API_ENDPOINT + '/Feed/add.json',body)
+              .subscribe(data => {
+                resolve(data);
+              });
+          });
+    }
 }

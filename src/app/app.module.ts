@@ -27,11 +27,12 @@ import { CommunicationPage } from '../pages/communication/communication';
 import { DealerListPage } from '../pages/dealer-list/dealer-list';
 import { ChatPage } from '../pages/chat/chat';
 import { UserServiceProvider } from '../providers/user-service/user-service';
+import { SignUpServiceProvider } from '../providers/signup-service/signup-service';
 import { HomeServiceProvider } from '../providers/home-service/home-service';
 import { DealerServiceProvider } from '../providers/dealer-service/dealer-service';
 import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
 import { FeedServiceProvider } from '../providers/feed-service/feed-service';
-
+import { ProductServiceProvider } from '../providers/product-service/product-service';
 
 
 
@@ -82,11 +83,13 @@ import { FeedServiceProvider } from '../providers/feed-service/feed-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
+    SignUpServiceProvider,
     HomeServiceProvider,
     ProfileServiceProvider,
     GlobalVars,
     DealerServiceProvider,
-    FeedServiceProvider
+    FeedServiceProvider,
+    ProductServiceProvider
   ]
 })
 export class AppModule {}

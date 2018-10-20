@@ -19,7 +19,10 @@ import { GlobalVars } from '../../globals/globalVar';
 export class FeedsPage {
   items: any;
   feedList:ICFeedsWrapper;
-  baseURL:string;
+  content:any;
+  title:any;
+  productID:any;
+  autoID:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public FeedServiceProvider: FeedServiceProvider, public globalVars: GlobalVars) {
     this.loadFeedList();
     this.baseURL = this.globalVars.baseURL;
@@ -38,4 +41,18 @@ export class FeedsPage {
     }); 
   }
 
+  saveStatus(){
+    this.title = "";
+    this.productID = -1;
+    this.autoID = -1;
+    this.FeedServiceProvider.saveStatus({content:this.content, title:this.title,productID:this.productID,userID:this.globalVars.getUserID(),autoID:this.autoID})
+    .then((data:ICFeedsWrapper) => {
+      debugger
+        this.reload();
+    });;
+  }
+
+  reload(){
+    this.navCtrl.push(FeedsPage);
+  }
 }
