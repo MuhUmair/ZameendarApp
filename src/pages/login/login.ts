@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
 //Navigation
 import { SignupPage } from '../signup/signup'
 import { ProfilePage } from '../profile/profile'
-
+declare var jQuery: any;
 
 /**
  * Generated class for the LoginPage page.
@@ -29,6 +29,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public UserServiceProvider: UserServiceProvider, private storage: Storage, public globalVars: GlobalVars) {
   }
   isLogin(){
+    jQuery("#loginSpinner").show();
     this.UserServiceProvider.userLogin({mobile:this.mobile, password:this.password})
     .then((data:ICLoginWrapper) => {
       this.lData = data;
@@ -36,11 +37,10 @@ export class LoginPage {
         this.storage.remove("authLogin");
         this.storage.set("authLogin", this.lData);
         this.globalVars.loginState = true;
-        this.globalVars.setLoginDBData().then((data:ICLoginWrapper) => {
-          this.lData = data;
+        this.globalVars.loginData = data;
           this.goToprofile();
+        this.globalVars.setLoginDBData().then((data:ICLoginWrapper) => {
         });
-        
       }
 
       // console.log(this.arteeList);
