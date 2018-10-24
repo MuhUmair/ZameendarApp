@@ -22,9 +22,32 @@
 
       <!-- <input-label InputLabel="Product Type"></input-label>
       <input-label InputLabel="Product Name"></input-label> -->
-      <div *ngFor="let item of items">
-        <rates-item [item]="item"></rates-item>
-      </div>
+      <div *ngIf="items != null;then Content else other_mainContent">Not found</div> 
+      <ng-template #Content>
+          <div *ngIf="items.data != null;then mainContent else other_mainContent">No Product Found</div>
+          <ng-template #mainContent>
+              <div *ngIf="items.data.products != null && items.data.products.length > 0;then subContent else other_mainContent">No Product Found</div>
+              <ng-template #subContent>
+                <div *ngFor="let item of items.data.products">
+                  <div class="main-div sub-div">
+                    <div class="img-div">
+                        <img class="img-item" src="{{'http://sarcasmnew.com/Arat/Artee/img/' + item.autofillproduct.picture}}"
+                        onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+                      <p style="margin-left: 3%"><b>{{item.name}}</b></p>
+                    </div>
+                    <div class="main-div">
+                      <ion-input class="input-rate" type="text" placeholder="Min Rate"></ion-input>
+                      <span class="span">To</span>
+                      <ion-input class="input-rate" type="text" placeholder="Max Rate"></ion-input>
+                    </div>
+                    <input-label InputLabel="Description"></input-label>
+                    <ion-input class="des-rate" type="text" placeholder="Add Description"></ion-input>
+                  </div>
+                </div>
+              </ng-template>
+        </ng-template>
+      </ng-template>
+        <ng-template #other_mainContent><div style="width: 100%;text-align: center;"><ion-spinner></ion-spinner></div></ng-template>
       <z-button btnText="Add" buttonStyle="SearchButtonStyle"></z-button>
     
     </ion-card-content>

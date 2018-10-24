@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { GlobalVars } from '../../globals/globalVar';
+import {ProfileServiceProvider} from '../../providers/profile-service/profile-service';
+import { ICProfileWrapper } from './../../Interfaces/wrapper/IProfileWrapper';
 /**
  * Generated class for the AddRatesPage page.
  *
@@ -14,15 +16,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-rates.html',
 })
 export class AddRatesPage {
-  items: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items = [
-      {Name:'Peas',Image:'assets/imgs/peas.png'},
-      {Name:'Brinjal',Image:'assets/imgs/brinjal.png'}];
+  items: ICProfileWrapper;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public globalVars: GlobalVars
+    , public ProfileServiceProvider: ProfileServiceProvider) {
+    // this.items = [
+    //   {Name:'Peas',Image:'assets/imgs/peas.png'},
+    //   {Name:'Brinjal',Image:'assets/imgs/brinjal.png'}];
+      this.loadProduct(this.globalVars.getUserID());
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddRatesPage');
   }
 
+  loadProduct(id:any)
+  {
+    this.ProfileServiceProvider.getProfileList(id)
+    .then((data:ICProfileWrapper) => {
+      this.items = data;
+      console.log("Products",this.items);
+      // console.log(this.coldStorageList);
+      // console.log(this.tractorList);
+    }); 
+  }
 }

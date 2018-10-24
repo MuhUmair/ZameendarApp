@@ -20,7 +20,8 @@ export class ProfilePage {
   id:any;
   profileList:ICProfileWrapper;
   baseURL:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public ProfileServiceProvider: ProfileServiceProvider, public globalVars: GlobalVars) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public ProfileServiceProvider: ProfileServiceProvider,
+     public globalVars: GlobalVars) {
     this.globalVars.setHeaderName("Profile");
     this.baseURL = this.globalVars.baseURL;
     if(navParams.data.toString() != "[object Object]")
