@@ -25,20 +25,11 @@ export class FeedsPage {
   autoID:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public FeedServiceProvider: FeedServiceProvider, public globalVars: GlobalVars) {
     this.loadFeedList();
-    this.items = [
-      {Name:'Sang Jan Su',Date:'01 - Apr',Time:'08:46 pm',
-      Text:'There is no one who loves pain itself,who seeks after it and wants to have it, simply because it is pain..',
-      Comment:'7',Follow:'12',Type:'multyfeed',
-      multiitem: [{Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-                  {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'},
-                  {Name:'Capsicum',Phone:'Product Description',Followers:'100 Rs',Category:'Vegetable',ImagePath:'assets/imgs/vegetable.png'}]
-    },
-      {Name:'Sang Jan Su',Date:'01 - Apr',Time:'08:46 pm',MinAmount:'100',MaxAmount:'130',Text:'There is no one who loves pain itself,who seeks after it and wants to have it, simply because it is pain..',Comment:'7',Follow:'12',Type:'feed'}
-    ];
+    this.baseURL = this.globalVars.baseURL;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedsPage');
+    console.log(this.baseURL);
   }
   loadFeedList(){
     this.FeedServiceProvider.getFeedList()
