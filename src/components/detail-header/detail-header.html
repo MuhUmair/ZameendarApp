@@ -41,16 +41,16 @@
             <ion-item>
                     <ion-avatar item-start style="width: 40px;">
                         <img *ngIf="item.autofillproduct != null" style="border-radius: 50px" 
-                        src="{{'http://sarcasmnew.com/Arat/Artee/img/' + item.autofillproduct.email}}"
+                        src="{{'http://sarcasmnew.com/Arat/Artee/img/' + obj.autofillproduct.email}}"
                         onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
-                        <img style="border-radius: 50px" *ngIf="item.autofillproduct == null" src="assets/imgs/no-image.jpg"/>
+                        <img style="border-radius: 50px" *ngIf="obj.autofillproduct == null" src="assets/imgs/no-image.jpg"/>
                     </ion-avatar>
                     <div>
                             <p><b>{{obj.title}}</b></p><br/>
                             <p class="phone text">{{obj.about}}</p>
                     </div>
                     <div>
-                            <p class="rates text"><b>{{item.other1}} - {{item.other2}} Rs</b></p>
+                            <p class="rates text"><b>{{obj.other1}} - {{obj.other2}} Rs</b></p>
                             <p class="text content">{{obj.content}}</p>
                     </div>
             </ion-item>

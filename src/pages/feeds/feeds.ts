@@ -23,6 +23,7 @@ export class FeedsPage {
   title:any;
   productID:any;
   autoID:any;
+  baseURL:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public FeedServiceProvider: FeedServiceProvider, public globalVars: GlobalVars) {
     this.loadFeedList();
     this.baseURL = this.globalVars.baseURL;
