@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
-
+import * as Constants from '../constant/constants';
 
 @Injectable()
 export class ProfileServiceProvider
@@ -27,4 +27,14 @@ export class ProfileServiceProvider
                 });
           });
     }
+
+    saveRates(body:any) {
+        return new Promise(resolve => {
+            debugger
+          this.http.post(Constants.API_ENDPOINT + '/rates/addProductRate.json',body)
+            .subscribe(data => {
+              resolve(data);
+            });
+        });
+      } 
 }

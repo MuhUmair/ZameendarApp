@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GlobalVars } from '../../globals/globalVar';
 import {ProfileServiceProvider} from '../../providers/profile-service/profile-service';
 import { ICProfileWrapper } from './../../Interfaces/wrapper/IProfileWrapper';
+declare var jQuery: any;
 /**
  * Generated class for the AddRatesPage page.
  *
@@ -17,6 +18,11 @@ import { ICProfileWrapper } from './../../Interfaces/wrapper/IProfileWrapper';
 })
 export class AddRatesPage {
   items: ICProfileWrapper;
+  minRate:any;
+  maxRate:any;
+  description:any;
+  total:any;
+  pId:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public globalVars: GlobalVars
     , public ProfileServiceProvider: ProfileServiceProvider) {
     // this.items = [
@@ -38,5 +44,26 @@ export class AddRatesPage {
       // console.log(this.coldStorageList);
       // console.log(this.tractorList);
     }); 
+  }
+
+  addRates()
+  {
+    this.total = jQuery("#total").val();
+    for(var i=0;i<this.total;i++)
+    {
+      this.minRate = jQuery("#minRate_"+i)[0].firstElementChild.value;
+      this.maxRate = jQuery("#maxRate_"+i)[0].firstElementChild.value;
+      this.description = jQuery("#description_"+i)[0].firstElementChild.value;
+this.pId = jQuery("#pId_"+i).val();
+      if(this.minRate != "" && this.maxRate != "")
+      {
+        this.ProfileServiceProvider.saveRates({minRate:this.minRate,maxRate:this.maxRate,content:this.description
+          ,userID:this.globalVars.getUserID(),productID:this.pId,"date[year]":2018,"date[month]":10
+          ,"date[day]":25}).then((data) =>{
+          console.log(data)
+        })
+      }
+    
+    }
   }
 }
