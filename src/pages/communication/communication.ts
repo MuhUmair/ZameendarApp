@@ -1,3 +1,4 @@
+import { CommunicationServiceProvider } from './../../providers/communication-service/communication-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,20 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CommunicationPage {
   items: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items = [
-      {Name:'MARY GREEN',Message:'is now following you',Time:'2 min ago'},
-      {Name:'TOM HARRISON',Message:'share your post "POST TITLE" via FACEBOOK',Time:'20 min ago'},
-      {Name:'JOHN MORRISON',Message:'reposted your "POST TITLE"',Time:'2 hours ago'},
-      {Name:'OLEG PETROV',Message:'commented on your post "POST TITLE"',Time:'2 hours ago'},
-      {Name:'OLEG PETROV',Message:'like your "POST TITLE"',Time:'2 hours ago'},
-      {Name:'F1 COMMUNITY',Message:'invited you to join',Time:'5 hours ago'},
-    ];
+  comm:any;
+  commrec:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public communicationServiceProvider: CommunicationServiceProvider) {
+    this.loadCommunicationList();
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CommunicationPage');
   }
+  loadCommunicationList()
+  {
+    this.communicationServiceProvider.getCommunicationList()
+    .then(data => {
+      this.comm = data;
+      if(this.comm){
+        this.commrec = this.comm.commrec;
+      }
 
+      console.log("whwkehrkj ",this.comm.commrec);
+      // console.log(this.coldStorageList);
+      // console.log(this.tractorList);
+    }); 
+  }
 }
 

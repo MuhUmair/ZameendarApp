@@ -24,27 +24,33 @@
 <ion-content padding>
   <div style="height: 100%;">
     <div style="background-color: #f7f6f6;height: 92%;padding: 5%">
-    <div style="overflow: hidden;">
-         <div style="overflow: hidden;">
-        <p class="p-clr-sender p-border">I am gonna see that place we talked about yesterday. Paul will be there too.Will you come?</p>
-      </div>
-         <p style="margin-top: 0;color: #ccc;margin-bottom: 0">3 mins ago</p>
-    </div>
-    <div style="overflow: hidden;">
-        <div style="overflow: hidden;">
-       <p class="p-clr-reciever p-border">Yes, sure! See you there!</p>
-     </div>
-        <p style="margin-top: 0;color: #ccc;float: right;margin-bottom: 0">10 sec ago</p>
-   </div>
-   <div style="overflow: hidden;">
-      <div style="overflow: hidden;">
-     <p class="p-clr-sender p-border">Ok! See you!</p>
-   </div>
-      <p style="margin-top: 0;color: #ccc;margin-bottom: 0">2 sec ago</p>
+    <div *ngIf="chats != null">
+        <div  *ngFor="let item of chats">
+          
+          <div style="overflow: hidden;">
+            <div style="overflow: hidden;">
+              <div *ngIf="item.serderID != currentUser;" >
+                <p class="p-clr-sender p-border">{{item.msg}}</p>
+              </div>
+              <div *ngIf="item.serderID == currentUser;" >
+                  <p class="p-clr-reciever p-border">{{item.msg}}</p>
+                  
+                </div>
+            </div>
+            <div *ngIf="item.serderID != currentUser;" >
+              <p style="margin-top: 0;color: #ccc;margin-bottom: 0">3 mins ago</p>
+            </div>
+            <div *ngIf="item.serderID == currentUser;" >
+              <p style="margin-top: 0;color: #ccc;float: right;margin-bottom: 0">10 sec ago</p>
+            </div>
+          </div>
+          
+        </div>
+        
  </div>
     </div>
     <div style="bottom: 0px; position: absolute;width: 100%">
-      <input-field></input-field>
+        <input class="sendMsg" type="text" placeholder="Type Message" />
     </div>
   </div>
 
