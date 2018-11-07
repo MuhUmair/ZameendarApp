@@ -32,11 +32,21 @@
                 <div *ngFor="let item of items.data.products;let rowIndex = index">
                     <input id="pId_{{rowIndex}}" type="hidden" value="{{item.id}}"/>
                     <div class="main-div sub-div">
+                    <div *ngIf="item.autofillproduct != null;then imgContent else other_imgContent"></div>
+                    <ng-template #imgContent>    
                     <div class="img-div">
-                        <img class="img-item" src="{{'http://sarcasmnew.com/Arat/Artee/img/' + item.autofillproduct.picture}}"
+                      <img class="img-item" src="{{'http://sarcasmnew.com/Arat/Artee/img/' + item.autofillproduct.picture}}"
                         onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
                       <p style="margin-left: 3%"><b>{{item.name}}</b></p>
                     </div>
+                  </ng-template>
+                  <ng-template #other_imgContent>    
+                      <div class="img-div">
+                        <img class="img-item" src="assets/imgs/no-image.jpg"
+                          onError="this.src='assets/imgs/no-image.jpg';"  alt="..." />
+                        <p style="margin-left: 3%"><b>{{item.name}}</b></p>
+                      </div>
+                    </ng-template>
                     <div class="main-div">
                       <ion-input id="minRate_{{rowIndex}}" class="input-rate" type="text" placeholder="Min Rate"></ion-input>
                       <span class="span">To</span>
