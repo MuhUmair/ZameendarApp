@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar style="margin-top: 57px">
     <ion-title style="position: absolute; margin: 16px 0px 0px 64px">Lisa Carter  </ion-title>
       <ion-avatar style="float: right;">
         <img class="img" src="assets/imgs/profile.png">
@@ -22,8 +22,8 @@
 
 
 <ion-content padding>
-  <div style="height: 100%;">
-    <div style="background-color: #f7f6f6;height: 92%;padding: 5%">
+  <div style="height: 100vh;">
+    <div style="background-color: #f7f6f6;height: 100vh;padding: 5%">
     <div *ngIf="chats != null">
         <div  *ngFor="let item of chats">
           
@@ -49,9 +49,14 @@
         
  </div>
     </div>
-    <div style="bottom: 0px; position: absolute;width: 100%">
-        <input class="sendMsg" type="text" placeholder="Type Message" />
-    </div>
+    <!-- <div style="bottom: 0px; position: absolute;width: 100%">
+        <input style="position: absolute;bottom: -9px;width: 100%;height: 45px;border-radius: 5px;" class="sendMsg" type="text" placeholder="Type Message" />
+    </div> -->
   </div>
 
 </ion-content>
+<ion-footer style="bottom: 51px;">
+    <ion-toolbar>
+        <input style="position: absolute;bottom: 12px;left:0px;width: 100%;height: 45px;border-radius: 5px;" class="sendMsg" type="text" placeholder="Type Message" />
+    </ion-toolbar>
+  </ion-footer>
